@@ -1,0 +1,2 @@
+# portfolio
+Aplikasi portfolio static
