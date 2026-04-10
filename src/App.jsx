@@ -20,7 +20,7 @@ function App() {
             Saya mempunyai ketertarikan dalam bidang programming yang berfokus pada pembuatan aplikasi web yang menarik dan fungsional.
           </p>
           <div className='flex items-center sm:gap-4 gap-2'>
-            <a href="/CV_Rae_Triadi.pdf" className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600' download>
+            <a href="#" className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600' download>
               Download CV <i className="ri-download-line ri-lg"></i>
             </a>
             <a href="#proyek" className='border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white'>
