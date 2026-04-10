@@ -16,7 +16,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar py-7 flex items-center justify-between relative z-50">
+    <div className="Navbar py-7 flex items-center justify-between relative z-50">
       
       <div className="logo">
         <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white rounded-lg">
@@ -37,10 +37,10 @@ const Navbar = () => {
         
         md:top-0 md:opacity-100 md:pointer-events-auto`}
       >
-        <li><a href="#" className="text-base font-medium hover:text-blue-500">Beranda</a></li>
-        <li><a href="#" className="text-base font-medium hover:text-blue-500">Tentang</a></li>
-        <li><a href="#" className="text-base font-medium hover:text-blue-500">Proyek</a></li>
-        <li><a href="#" className="text-base font-medium hover:text-blue-500">Kontak</a></li>
+        <li><a href="#beranda" className="text-base font-medium hover:text-blue-500">Beranda</a></li>
+        <li><a href="#tentang" className="text-base font-medium hover:text-blue-500">Tentang</a></li>
+        <li><a href="#proyek" className="text-base font-medium hover:text-blue-500">Proyek</a></li>
+        <li><a href="#kontak" className="text-base font-medium hover:text-blue-500">Kontak</a></li>
       </ul>
     </div>
   );

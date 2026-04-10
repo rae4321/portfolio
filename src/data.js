@@ -1,5 +1,6 @@
 import HeroImage from "/assets/hero-img.webp";
 
+
 const Image = {
   HeroImage,
 };
