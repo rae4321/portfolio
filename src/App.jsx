@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import DataImage from "./data";
-import { listTools, listProyek } from "./data"
+import { listTools, listProyek, listSertifikat } from "./data"
 import Lanyard from './components/Lanyard.jsx'
 
 function App() {
@@ -48,11 +48,11 @@ function App() {
             <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md sm:block hidden' loading='lazy' />
             <div className='flex items-center gap-6'>
               <div>
-                <h1 className='text-4xl mb-1'>5<span className='text-blue-500'>+</span></h1>
+                <h1 className='text-4xl mb-1'>4<span className='text-blue-500'>+</span></h1>
                 <p>Proyek Selesai</p>
               </div>
               <div>
-                <h1 className='text-4xl mb-1'>4<span className='text-blue-500'>+</span></h1>
+                <h1 className='text-4xl mb-1'>2<span className='text-blue-500'>+</span></h1>
                 <p>Tahun Pengalaman</p>
               </div>
             </div>
@@ -99,13 +99,39 @@ function App() {
                   ))}
                 </div>
                 <div className='mt-8 text-center'>
-                  <a href="#" className='bg-blue-500 p-3 rounded-lg block border border-zinc-600'>Lihat Detail</a>
+                  <a href={proyek.link} className='bg-blue-500 p-3 rounded-lg block border border-zinc-600' target="_blank" rel="noopener noreferrer">Lihat Detail</a>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Sertifikat */}
+      <div className="proyek mt-32 py-10" id='proyek'>
+        <h1 className='text-center text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Sertifikat</h1>
+        <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          Berikut adalah beberapa sertifikat yang telah saya peroleh.
+        </p>
+
+        <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 :grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000">
+          {listSertifikat.map(sertifikat   => (
+            <div key={sertifikat.id} className='p-4 bg-zinc-800 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={sertifikat.dad}>
+              <img src={sertifikat.gambar} alt="Sertifikat Image" loading='lazy' />
+              <div>
+                <h1 className='text-2xl font-bold my-4'>{sertifikat.nama}</h1>
+                <p className='text-base/loose mb-4'>{sertifikat.ket}</p>
+                <div className='flex flex-wrap gap-2'>
+                </div>
+                <div className='mt-8 text-center'>
+                  <a href={sertifikat.link} target="_blank" rel="noopener noreferrer" className='bg-blue-500 p-3 rounded-lg block border border-zinc-600'>Lihat Detail</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Sertifikat */}
 
       {/* Contact */}
       <div className="contact mt-32 sm:p-10 p-0" id='kontak'>
