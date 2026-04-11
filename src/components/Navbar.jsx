@@ -40,6 +40,7 @@ const Navbar = () => {
         <li><a href="#beranda" className="text-base font-medium hover:text-blue-500">Beranda</a></li>
         <li><a href="#tentang" className="text-base font-medium hover:text-blue-500">Tentang</a></li>
         <li><a href="#proyek" className="text-base font-medium hover:text-blue-500">Proyek</a></li>
+        <li><a href="#sertifikat" className="text-base font-medium hover:text-blue-500">Sertifikat</a></li>
         <li><a href="#kontak" className="text-base font-medium hover:text-blue-500">Kontak</a></li>
       </ul>
     </div>

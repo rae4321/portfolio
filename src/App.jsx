@@ -108,7 +108,7 @@ function App() {
       </div>
 
       {/* Sertifikat */}
-      <div className="proyek mt-32 py-10" id='proyek'>
+      <div className="proyek mt-32 py-10" id='sertifikat'>
         <h1 className='text-center text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Sertifikat</h1>
         <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
           Berikut adalah beberapa sertifikat yang telah saya peroleh.
