@@ -13,7 +13,7 @@ function App() {
         <div className='animate__animated animate__fadeInUp animate__delay-2s'>
           <div className='flex items-center gap-3 mb-6 bg-zinc-800 rounded-2xl'>
             <img src={DataImage.HeroImage} alt="Hero Image" className='w-10 rounded-md' loading='lazy' />
-            <p className='p-2 text-sm'>Kode yang indah terlahir dari pikiran yang kreatif, Iziinn 🙏</p>
+            <p className='p-2 text-sm'>Kode yang indah terlahir dari pikiran yang jernih, Iziinn 🙏</p>
           </div>
           <h1 className='text-5xl/tight mb-6'>Hi, Saya Rae Triadi</h1>
           <p className='text-base/loose mb-6 opacity-50'>
