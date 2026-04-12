@@ -157,6 +157,7 @@ import Sertifikat1 from "/assets/sertifikat/sertifikat1.webp";
 import Sertifikat2 from "/assets/sertifikat/sertifikat2.jpg";
 import Sertifikat3 from "/assets/sertifikat/sertifikat3.jpg";
 import Sertifikat4 from "/assets/sertifikat/sertifikat4.jpeg";
+import Sertifikat5 from "/assets/sertifikat/sertifikat5.jpg";
 
 export const listSertifikat = [
   {
@@ -190,5 +191,13 @@ export const listSertifikat = [
       ket: "Sertifikat yang menunjukkan keahlian dalam pengembangan database menggunakan SQL.",
       link: "SQL.pdf",
       dad: "1300",
+  },
+  {
+    id: 5,
+    gambar: Sertifikat5,
+    nama: "Sertifikat MikroTik",
+    ket: "Sertifikat yang menunjukkan keahlian dalam konfigurasi dan pengelolaan jaringan menggunakan MikroTik.",
+    link: "MikroTik.pdf",
+    dad: "1400",
   },
 ];

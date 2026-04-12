@@ -8,6 +8,7 @@ const Footer = () => {
             <a href="#beranda">Beranda</a>
             <a href="#tentang">Tentang</a>
             <a href="#proyek">Proyek</a>
+            <a href="#sertifikat">Sertifikat</a>
         </div>
         <div className="flex items-center gap-3">
             <a href="https://github.com/rae4321" target="_blank" rel="noopener noreferrer">
