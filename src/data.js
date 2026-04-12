@@ -119,7 +119,7 @@ export const listProyek = [
     id: 1,
     gambar: Proyek1,
     nama: "Sistem Palang Pintu Otomatis dengan Face Recognition",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+    desk: "Sebuqh sistem palang pintu mennggunakan face recognition berbasis IOT yang terintegrasi pada website",
     tools: ["HTML", "CSS", "Javascript", "Python", "Flask", "MySQL"],
     link: "https://github.com/rae4321/sistem-palang-pintu-otomatis-face-recognition",
     dad: "200",
