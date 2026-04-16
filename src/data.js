@@ -166,7 +166,7 @@ export const listSertifikat = [
     nama: "Sertifikat Pemrograman",
     ket: "Sertifikat yang menunjukkan keahlian dalam pemrograman.",
     link: "SKILL_PASSPORT_250205070128.pdf",
-    dad: "1000",
+    dad: "200",
   },
   {
     id: 2,
@@ -174,7 +174,7 @@ export const listSertifikat = [
     nama: "Sertifikat Javascript",
     ket: "Sertifikat yang menunjukkan keahlian dalam pengembangan aplikasi web menggunakan Javascript.",
     link: "js.pdf",
-    dad: "1100",
+    dad: "300",
   },
   {
     id: 3,
@@ -182,7 +182,7 @@ export const listSertifikat = [
     nama: "Sertifikat CSS",
     ket: "Sertifikat yang menunjukkan keahlian dalam pengembangan tampilan aplikasi web menggunakan CSS.",
     link: "css.pdf",
-    dad: "1200",
+    dad: "400",
   },
   {
       id: 4,
@@ -190,7 +190,7 @@ export const listSertifikat = [
       nama: "Sertifikat SQL",
       ket: "Sertifikat yang menunjukkan keahlian dalam pengembangan database menggunakan SQL.",
       link: "SQL.pdf",
-      dad: "1300",
+      dad: "500",
   },
   {
     id: 5,
@@ -198,6 +198,6 @@ export const listSertifikat = [
     nama: "Sertifikat MikroTik",
     ket: "Sertifikat yang menunjukkan keahlian dalam konfigurasi dan pengelolaan jaringan menggunakan MikroTik.",
     link: "MikroTik.pdf",
-    dad: "1400",
+    dad: "600",
   },
 ];
