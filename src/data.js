@@ -8,17 +8,18 @@ const Image = {
 export default Image;
 
 import Tools1 from "/assets/tools/vscode.png";
-import Tools2 from "/assets/tools/reactjs.png";
+import Tools2 from "/assets/tools/php.png";
 import Tools3 from "/assets/tools/python.png";
-import Tools4 from "/assets/tools/tailwind.png";
+import Tools4 from "/assets/tools/js.png";
 import Tools5 from "/assets/tools/bootstrap.png";
-import Tools6 from "/assets/tools/js.png";
-import Tools7 from "/assets/tools/mysql.png";
-import Tools8 from "/assets/tools/github.png";
-import Tools9 from "/assets/tools/php.png";
+import Tools6 from "/assets/tools/laravel.png";
+import Tools7 from "/assets/tools/Flask.png";
+import Tools8 from "/assets/tools/reactjs.png";
+import Tools9 from "/assets/tools/tailwind.png";
 import Tools10 from "/assets/tools/canva.png";
 import Tools11 from "/assets/tools/figma.png";
-import Tools12 from "/assets/tools/Flask.png";
+import Tools12 from "/assets/tools/mysql.png";
+import Tools13 from "/assets/tools/github.png";
 
 export const listTools = [
   {
@@ -31,8 +32,8 @@ export const listTools = [
   {
     id: 2,
     gambar: Tools2,
-    nama: "React JS",
-    ket: "Framework",
+    nama: "PHP",
+    ket: "Language",
     dad: "200",
   },
   {
@@ -45,8 +46,8 @@ export const listTools = [
   {
     id: 4,
     gambar: Tools4,
-    nama: "Tailwind CSS",
-    ket: "Framework",
+    nama: "Javascript",
+    ket: "Language",
     dad: "400",
   },
   {
@@ -59,29 +60,29 @@ export const listTools = [
   {
     id: 6,
     gambar: Tools6,
-    nama: "Javascript",
-    ket: "Language",
+    nama: "Laravel",
+    ket: "Framework",
     dad: "600",
   },
   {
     id: 7,
     gambar: Tools7,
-    nama: "MySQL",
-    ket: "Database",
+    nama: "Flask",
+    ket: "Framework",
     dad: "700",
   },
   {
     id: 8,
     gambar: Tools8,
-    nama: "Github",
-    ket: "Repository",
+    nama: "ReactJS",
+    ket: "Framework",
     dad: "800",
   },
   {
     id: 9,
     gambar: Tools9,
-    nama: "PHP",
-    ket: "Language",
+    nama: "TailwindCSS",
+    ket: "Framework",
     dad: "900",
   },
   {
@@ -101,10 +102,17 @@ export const listTools = [
   {
     id: 12,
     gambar: Tools12,
-    nama: "Flask",
-    ket: "Framework",
+    nama: "MySQL",
+    ket: "Database",
     dad: "1200",
   },
+  {
+    id: 13,
+    gambar: Tools13,
+    nama: "GitHub",
+    ket: "Repository",
+    dad: "1300",
+  },  
 ];
 
 import Proyek1 from "/assets/proyek/proyek1.png";
@@ -158,6 +166,7 @@ import Sertifikat2 from "/assets/sertifikat/sertifikat2.jpg";
 import Sertifikat3 from "/assets/sertifikat/sertifikat3.jpg";
 import Sertifikat4 from "/assets/sertifikat/sertifikat4.jpeg";
 import Sertifikat5 from "/assets/sertifikat/sertifikat5.jpg";
+import Sertifikat6 from "/assets/sertifikat/sertifikat6.jpg";
 
 export const listSertifikat = [
   {
@@ -199,5 +208,13 @@ export const listSertifikat = [
     ket: "Sertifikat yang menunjukkan keahlian dalam konfigurasi dan pengelolaan jaringan menggunakan MikroTik.",
     link: "MikroTik.pdf",
     dad: "600",
+  },
+  {
+    id: 6,
+    gambar: Sertifikat6,
+    nama: "Sertifikat Pemrograman Web",
+    ket: "Sertifikat yang menunjukkan keahlian dalam pemrograman web.",
+    link: "sertifikat_course_123_2257138_180426052104.pdf",
+    dad: "700",
   },
 ];
