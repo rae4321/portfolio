@@ -9,38 +9,70 @@ function App() {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className='hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1'>
-        <div className='animate__animated animate__fadeInUp animate__delay-2s'>
-          <h1 className='text-5xl/tight mb-6'>Hi, Saya Rae Triadi</h1>
-          <p className='text-base/loose mb-6 opacity-50'>
-            Saya mempunyai ketertarikan dalam bidang programming yang berfokus pada pembuatan aplikasi web yang menarik dan fungsional.
-          </p>
-          <div className='flex items-center sm:gap-4 gap-2'>
-          <a href="CV_Rae_Triadi .pdf" className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600' download>
-              Download CV <i className="ri-download-line ri-lg"></i>
-            </a>
-            <a href="#proyek" className='border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white'>
-              Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
-            </a>
+      {/* Wrapper Utama Beranda */}
+<section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20 pb-10">
+  
+  {/*  SCROLL VELOCITY  */}
+  <div className="absolute inset-0 z-0 flex flex-col justify-center pointer-events-none select-none opacity-[0.03] dark:opacity-[0.2]">
+    <ScrollVelocity
+      texts={['FULLSTACK DEVELOPER']} 
+      velocity={100} 
+      className="text-[15vw] font-black leading-none tracking-tighter" 
+      numCopies={4}
+    />
+  </div>
+
+  {/*  CONTENT LAYER (FOREGROUND) */}
+  <div className="container mx-auto px-6 relative z-10">
+    <div className='grid md:grid-cols-2 items-center xl:gap-16 gap-10'>
+      
+      {/* SISI KIRI: TEKS HERO */}
+      <div className='animate__animated animate__fadeInUp animate__delay-1s'>
+        {/* Badge Sapaan */}
+        <div className='inline-flex items-center gap-3 mb-8 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-2 pr-5 rounded-full'>
+          <div className='w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center'>
+            <i className="ri-code-s-slash-line text-blue-500 text-xl"></i>
           </div>
+          <p className='text-xs md:text-sm font-medium tracking-wide'>
+            Available for New Projects 🙏
+          </p>
         </div>
 
-        {/* --- AREA LANYARD (MENGGANTIKAN IMAGE HERO) --- */}
-        <div className='w-full h-500px md:h-600px relative animate__animated animate__fadeInUp animate__delay-3s'>
-          <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} transparent={true} />
+        <h1 className='text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]'>
+          Hi, Saya <span className="text-blue-500">Rae Triadi</span>
+        </h1>
+        
+        <p className='text-lg lg:text-xl text-zinc-400 mb-10 max-w-lg leading-relaxed'>
+          Membangun solusi digital yang menggabungkan fungsionalitas murni dengan estetika visual yang modern.
+        </p>
+
+        <div className='flex flex-wrap items-center gap-4'>
+          <a href="CV_Rae_Triadi.pdf" 
+             className='group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20' 
+             download>
+            Download CV 
+            <i className="ri-download-2-line transition-transform group-hover:translate-y-1"></i>
+          </a>
+          
+          <a href="#proyek" 
+             className='px-8 py-4 rounded-xl font-semibold border border-zinc-700 hover:bg-zinc-800 transition-all flex items-center gap-2'>
+            Lihat Proyek 
+            <i className="ri-arrow-right-up-line"></i>
+          </a>
         </div>
       </div>
-      
-      <ScrollVelocity
-        texts={['FULLSTACK DEVELOPER']} 
-        velocity={100}
-        className="custom-scroll-text"
-        numCopies={6}
-        damping={50}
-        stiffness={400}
-      />
 
+      {/* SISI KANAN: LANYARD 3D */}
+      <div className='w-full h-450px md:h-650px relative animate__animated animate__fadeIn lg:scale-110'>
+        {/* Glow Effect di belakang Lanyard */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 blur-[120px] rounded-full"></div>
+        
+        <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} transparent={true} />
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Tentang */}
       <div className='tentang mt-10 py-10' id='tentang'>
         <div className='xl:w-2/3 lg:w-full mx-auto p-7 bg-zinc-800 rounded-lg' data-aos="fade-up" data-aos-duration="1000">
