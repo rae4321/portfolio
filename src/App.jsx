@@ -47,13 +47,12 @@ function App() {
         </p>
 
         <div className='flex flex-wrap items-center gap-4'>
-          <a href="CV_Rae_Triadi.pdf" 
+          <a href="CV_Rae Triadi.pdf" target="_blank" rel="noopener noreferrer"
              className='group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20' 
              download>
             Download CV 
             <i className="ri-download-2-line transition-transform group-hover:translate-y-1"></i>
           </a>
-          
           <a href="#proyek" 
              className='px-8 py-4 rounded-xl font-semibold border border-zinc-700 hover:bg-zinc-800 transition-all flex items-center gap-2'>
             Lihat Proyek 
