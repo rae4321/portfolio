@@ -127,8 +127,10 @@ export const listProyek = [
     id: 1,
     gambar: Proyek1,
     nama: "Sistem Palang Pintu Otomatis dengan Face Recognition",
-    desk: "Sebuah sistem palang pintu menggunakan face recognition berbasis IOT yang terintegrasi pada website",
-    tools: ["Javascript", "Python", "TailwindCSS", "Flask", "MySQL"],
+    desk: "Sistem palang pintu otomatis berbasis IoT dengan face recognition menggunakan Python dan OpenCV. Sistem mampu mengidentifikasi wajah pengguna secara real-time dan mengontrol akses pintu secara otomatis melalui integrasi web.",
+    tools: ["Javascript", "OpenCV", "Python", "TailwindCSS", "Flask", "MySQL"],
+    fitur: ["Face Recognition", "IoT", "Web Integration"],
+    role: "Fullstack Developer",
     link: "https://github.com/rae4321/sistem-palang-pintu-otomatis-face-recognition",
     dad: "200",
   },
@@ -137,6 +139,8 @@ export const listProyek = [
     gambar: Proyek2,
     nama: "Landing Page",
     desk: "Landing page hitung mundur pergantian tahun baru dengan animasi yang menarik.",
+    fitur: ["Countdown Timer", "Animations"],
+    role: "Frontend Developer",
     tools: ["ReactJS", "TailwindCSS", "Javascript"],
     link: "https://github.com/rae4321/project-selamat-taun-baru-2026/tree/main",
     dad: "300",
@@ -145,8 +149,10 @@ export const listProyek = [
     id: 3,
     gambar: Proyek3,
     nama: "Web Iuran Pemeliharaan Lingkungan",
-    desk: "aplikasi web untuk mengelola iuran pemeliharaan lingkungan di sebuah komplek perumahan, dengan fitur manajemen anggota, pencatatan iuran, dan laporan keuangan.",
+    desk: "Aplikasi web untuk mengelola iuran pemeliharaan lingkungan di sebuah komplek perumahan, dengan fitur manajemen anggota, pencatatan iuran, dan laporan keuangan.",
     tools: ["PHP", "MySQL", "Bootstrap", "AdminLTE"],
+    fitur: ["Member Manajemen", "Pencatatan Iuran", "Laporan Keuangan"],
+    role: "Backend Developer",
     link: "https://github.com/rae4321/project-kelompok-ipl",
     dad: "400",
   },
@@ -155,6 +161,8 @@ export const listProyek = [
     gambar: Proyek4,
     nama: "Tugas Kelompok SPK",
     desk: "Proyek tugas kelompok untuk membuat aplikasi web yang dapat membantu pengguna dalam memilih laptop yang sesuai dengan kebutuhan menggunakan metode Weighted Product (WP).",
+    fitur: ["Weighted Product", "Laptop Selection"],
+    role: "Fullstack Developer",
     tools: ["PHP", "MySQL","Html", "CSS"],
     link: "https://github.com/rae4321/spk_pemilihan_laptop",
     dad: "500",
@@ -167,6 +175,7 @@ import Sertifikat3 from "/assets/sertifikat/sertifikat3.jpg";
 import Sertifikat4 from "/assets/sertifikat/sertifikat4.jpeg";
 import Sertifikat5 from "/assets/sertifikat/sertifikat5.jpg";
 import Sertifikat6 from "/assets/sertifikat/sertifikat6.jpg";
+import { label } from "framer-motion/client";
 
 export const listSertifikat = [
   {

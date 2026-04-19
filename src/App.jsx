@@ -2,6 +2,7 @@ import { useState } from 'react'
 import DataImage from "./data";
 import { listTools, listProyek, listSertifikat } from "./data"
 import Lanyard from './components/Lanyard.jsx'
+import ScrollVelocity from './components/ScrollVelocity.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,10 +12,6 @@ function App() {
       {/* Hero Section */}
       <div className='hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1'>
         <div className='animate__animated animate__fadeInUp animate__delay-2s'>
-          <div className='flex items-center gap-3 mb-6 bg-zinc-800 rounded-2xl'>
-            <img src={DataImage.HeroImage} alt="Hero Image" className='w-10 rounded-md' loading='lazy' />
-            <p className='p-2 text-sm'>Kode yang indah terlahir dari pikiran yang jernih, Iziinn 🙏</p>
-          </div>
           <h1 className='text-5xl/tight mb-6'>Hi, Saya Rae Triadi</h1>
           <p className='text-base/loose mb-6 opacity-50'>
             Saya mempunyai ketertarikan dalam bidang programming yang berfokus pada pembuatan aplikasi web yang menarik dan fungsional.
@@ -34,6 +31,15 @@ function App() {
           <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} transparent={true} />
         </div>
       </div>
+      
+      <ScrollVelocity
+        texts={['FULLSTACK DEVELOPER']} 
+        velocity={100}
+        className="custom-scroll-text"
+        numCopies={6}
+        damping={50}
+        stiffness={400}
+      />
 
       {/* Tentang */}
       <div className='tentang mt-10 py-10' id='tentang'>
@@ -41,8 +47,8 @@ function App() {
           <h1 className='text-4xl/snug font-bold mb-4'>Tentang Saya</h1>
           <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md mb-10 sm:hidden' />
           <p className='text-base/loose mb-10'>
-            Hi, perkenalkan saya Rae Triadi, seorang Web Developer. Saya percaya bahwa fungsionalitas harus berjalan beriringan, sehingga
-            setiap proyek yang saya kembangkan tidak hanya terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
+            Fullstack Developer dengan fokus pada pengembangan aplikasi berbasis web menggunakan Laravel, MySQL, dan JavaScript. Memiliki pengalaman dalam membangun sistem end-to-end mulai dari perancangan database, pengembangan backend, hingga implementasi antarmuka pengguna yang responsif.
+            Terbiasa mengembangkan berbagai proyek seperti sistem pendukung keputusan, sistem informasi berbasis web, serta integrasi teknologi IoT menggunakan Python dan computer vision. Memiliki pemahaman yang baik tentang REST API, manajemen database, serta pengembangan aplikasi yang terstruktur dan efisien.
           </p>
           <div className='flex items-center justify-between'>
             <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md sm:block hidden' loading='lazy' />
@@ -97,9 +103,19 @@ function App() {
                   {proyek.tools.map((tool, index) => (
                     <p className='py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold' key={index}>{tool}</p>
                   ))}
+                  {proyek.fitur && (
+                    <div className='flex flex-wrap gap-2 mt-4'>
+                      {proyek.fitur.map((fitur, index) => (
+                        <p className='py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold' key={index}>{fitur}</p>
+                      ))}
+                    </div>
+                  )}
+                  {proyek.role && (
+                    <p className='py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold mt-4'>{proyek.role}</p>
+                  )}
                 </div>
                 <div className='mt-8 text-center'>
-                  <a href={proyek.link} className='bg-blue-500 p-3 rounded-lg block border border-zinc-600' target="_blank" rel="noopener noreferrer">Lihat Detail</a>
+                  <a href={proyek.link} className='bg-blue-500 p-3 rounded-lg block border border-zinc-600' target="_blank" rel="noopener noreferrer">Lihat Kode</a>
                 </div>
               </div>
             </div>
