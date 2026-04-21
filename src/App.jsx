@@ -29,24 +29,24 @@ function App() {
       {/* SISI KIRI: TEKS HERO */}
       <div className='animate__animated animate__fadeInUp animate__delay-1s'>
         {/* Badge Sapaan */}
-        <div className='inline-flex items-center gap-3 mb-8 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-2 pr-5 rounded-full'>
+        <div className='flex flex-wrap items-center gap-4 sm justify-center md:justify-start mb-8 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-2 pr-5 rounded-full'>
           <div className='w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center'>
             <i className="ri-code-s-slash-line text-blue-500 text-xl"></i>
           </div>
           <p className='text-xs md:text-sm font-medium tracking-wide'>
-            Available for New Projects 🙏
+            Available for New Projects
           </p>
         </div>
 
-        <h1 className='text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]'>
+        <h1 className='text-4xl lg:text-7xl font-bold text-center mb-6 tracking-tight leading-[1.1]'>
           Hi, Saya <span className="text-blue-500">Rae Triadi</span>
         </h1>
         
-        <p className='text-lg lg:text-xl text-zinc-400 mb-10 max-w-lg leading-relaxed'>
-          Membangun solusi digital yang menggabungkan fungsionalitas murni dengan estetika visual yang modern.
+        <p className='text-md lg:text-xl text-zinc-400 mb-10 max-w-lg leading-relaxed'>
+          Saya <span className="font-bold text-blue-500">Fullstack Web Developer</span> yang tinggal di Indonesia. Saya memiliki pengalaman dalam membangun aplikasi web yang ramah pengguna presisi hingga tingkat piksel dan kinerja yang optimal menggunakan berbagai teknologi modern.
         </p>
 
-        <div className='flex flex-wrap items-center gap-4'>
+        <div className='flex flex-wrap items-center gap-4 justify-center md:justify-start'>
           <a href="CV_Rae_Triadi.pdf" target="_blank" rel="noopener noreferrer"
              className='group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20' 
              download>
