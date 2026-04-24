@@ -35,7 +35,7 @@ function App() {
           handle="javicodes"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="/assets/hero.jpeg"
+          avatarUrl="/hero.jpeg"
           showUserInfo={false}
           enableTilt={true}
           enableMobileTilt={false}
@@ -57,13 +57,10 @@ function App() {
     <div className='flex flex-wrap justify-center md:justify-start items-center gap-4'>
       <a 
         href="CV_Rae_Triadi.pdf" 
-        className='bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20' 
-        download
-      >
+        className='bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20'download>
         Download CV <i className="ri-download-line"></i>
       </a>
-      <a 
-        href="#proyek" 
+      <a href="#proyek" 
         className='border border-blue-500 text-blue-500 px-6 py-3 rounded-md hover:bg-blue-500 hover:text-white transition-all'
       >
         Lihat Proyek <i className="ri-arrow-down-line"></i>

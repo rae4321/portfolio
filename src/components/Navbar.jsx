@@ -19,17 +19,14 @@ const Navbar = () => {
   return (
     <div className="Navbar py-7 flex items-center justify-between relative z-50 px-4 md:px-10">
   
-  {/* 1. Logo tetap di kiri */}
   <div className="logo">
     <h1 
     className="text-3xl font-bold p-1 rounded-lg transition-colors duration-300"
-    style={{ color: 'var(--text-color)' }}
-  >
+    style={{ color: 'var(--text-color)' }}>
     Portofolio 
   </h1>
   </div>
 
-  {/* 2. Bungkus Menu dan Toogle dalam satu div agar mereka berkumpul di kanan */}
   <div className="flex items-center gap-5">
     <ul
       className={`menu flex items-center gap-5
@@ -41,8 +38,7 @@ const Navbar = () => {
         ? "top-0 opacity-100" 
         : "-top-32 opacity-0 md:opacity-100"
       } 
-      md:top-0 md:pointer-events-auto`}
-    >
+      md:top-0 md:pointer-events-auto`}>
       <li><a href="#tentang" className="text-base font-medium hover:text-blue-500">Tentang</a></li>
       <li><a href="#proyek" className="text-base font-medium hover:text-blue-500">Proyek</a></li>
       <li><a href="#sertifikat" className="text-base font-medium hover:text-blue-500">Sertifikat</a></li>

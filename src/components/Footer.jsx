@@ -6,7 +6,7 @@ const Footer = () => {
       {/* Container Konten Atas */}
       <div className="py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
         <h1 className="text-2xl font-bold">
-          Portfolio
+          Portofolio
         </h1>
         
         <div className="flex gap-7">

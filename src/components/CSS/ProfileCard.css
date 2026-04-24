@@ -58,6 +58,7 @@
 }
 
 .pc-card {
+  margin: 0 auto;
   height: 80svh;
   max-height: 540px;
   display: grid;
