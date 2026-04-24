@@ -20,7 +20,7 @@ const Navbar = () => {
       
       <div className="logo">
         <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white rounded-lg">
-          Portfolio
+          Portofolio 
         </h1>
       </div>
 
