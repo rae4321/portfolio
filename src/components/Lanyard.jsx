@@ -6,7 +6,7 @@ import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
-import './Lanyard.css';
+import './CSS/Lanyard.css';
 
 // Registrasi komponen MeshLine agar bisa dikenali oleh React Three Fiber
 extend({ MeshLineGeometry, MeshLineMaterial });

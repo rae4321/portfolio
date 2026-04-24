@@ -2,84 +2,85 @@ import { useState } from 'react'
 import DataImage from "./data";
 import { listTools, listProyek, listSertifikat } from "./data"
 import Lanyard from './components/Lanyard.jsx'
-import ScrollVelocity from './components/ScrollVelocity.jsx';
+import ProfileCard from './components/ProfileCard.jsx';
+import SplashCursor from './components/SplashCursor.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* Wrapper Utama Beranda */}
-<section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20 pb-10">
-  
-  {/*  SCROLL VELOCITY  */}
-  <div className="absolute inset-0 z-0 flex flex-col justify-center pointer-events-none select-none opacity-[0.03] dark:opacity-[0.2]">
-    <ScrollVelocity
-      texts={['FULLSTACK DEVELOPER']} 
-      velocity={100} 
-      className="text-[15vw] font-black leading-none tracking-tighter" 
-      numCopies={4}
-    />
+
+<SplashCursor
+  DENSITY_DISSIPATION={3.5}
+  VELOCITY_DISSIPATION={2}
+  PRESSURE={0.1}
+  CURL={3}
+  SPLAT_RADIUS={0.2}
+  SPLAT_FORCE={6000}
+  COLOR_UPDATE_SPEED={10}
+  SHADING
+  RAINBOW_MODE={false}
+  COLOR="#A855F7"
+/>
+
+{/* Hero Section */}
+<section className='hero min-h-[90vh] flex flex-col md:grid md:grid-cols-2 items-center justify-center pt-10 gap-12 md:gap-6'>
+  <div className='order-first md:order-last w-full flex justify-center items-center animate__animated animate__fadeInRight animate__delay-1s'>
+    <div className='relative flex justify-center items-center w-full'>
+      <div className='w-[85%] max-w-[380px md:max-w-[450px'>
+        <ProfileCard 
+          name="Rae Triadi"
+          title="Web Developer"
+          handle="javicodes"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="/assets/hero.jpeg"
+          showUserInfo={false}
+          enableTilt={true}
+          enableMobileTilt={false}
+          onContactClick={() => console.log('Contact clicked')}
+          behindGlowColor="rgba(125, 190, 255, 0.67)"
+          iconUrl="/iconpattern.png"
+          behindGlowEnabled
+          innerGradient="linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)" 
+        />
+      </div>
+    </div>
   </div>
+    <div className='w-full flex flex-col items-center md:items-start text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s px-6 md:px-0'>
+    <h1 className='text-5xl/tight mb-6'>Hi, Saya <span className='text-blue-500'>Rae Triadi</span></h1> 
+    <p className='text-base md:text-lg leading-relaxed mb-8 opacity-60 max-w-md'>
+      Saya Web Developer dengan pengalaman mengembangkan aplikasi web yang responsif dan user-friendly. Saya memiliki keahlian dalam berbagai teknologi modern.
+    </p>
 
-  {/*  CONTENT LAYER (FOREGROUND) */}
-  <div className="container mx-auto px-6 relative z-10">
-    <div className='grid md:grid-cols-2 items-center xl:gap-16 gap-10'>
-      
-      {/* SISI KIRI: TEKS HERO */}
-      <div className='animate__animated animate__fadeInUp animate__delay-1s'>
-        {/* Badge Sapaan */}
-        <div className='flex flex-wrap items-center gap-4 sm justify-center md:justify-start mb-8 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-2 pr-5 rounded-full'>
-          <div className='w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center'>
-            <i className="ri-code-s-slash-line text-blue-500 text-xl"></i>
-          </div>
-          <p className='text-xs md:text-sm font-medium tracking-wide'>
-            Available for New Projects
-          </p>
-        </div>
-
-        <h1 className='text-4xl lg:text-7xl font-bold text-center mb-6 tracking-tight leading-[1.1]'>
-          Hi, Saya <span className="text-blue-500">Rae Triadi</span>
-        </h1>
-        
-        <p className='text-md lg:text-xl text-zinc-400 mb-10 max-w-lg leading-relaxed'>
-          Saya <span className="font-bold text-blue-500">Fullstack Web Developer</span> yang tinggal di Indonesia. Saya memiliki pengalaman dalam membangun aplikasi web yang ramah pengguna presisi hingga tingkat piksel dan kinerja yang optimal menggunakan berbagai teknologi modern.
-        </p>
-
-        <div className='flex flex-wrap items-center gap-4 justify-center md:justify-start'>
-          <a href="CV_Rae_Triadi.pdf" target="_blank" rel="noopener noreferrer"
-             className='group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20' 
-             download>
-            Download CV 
-            <i className="ri-download-2-line transition-transform group-hover:translate-y-1"></i>
-          </a>
-          <a href="#proyek" 
-             className='px-8 py-4 rounded-xl font-semibold border border-zinc-700 hover:bg-zinc-800 transition-all flex items-center gap-2'>
-            Lihat Proyek 
-            <i className="ri-arrow-right-up-line"></i>
-          </a>
-        </div>
-      </div>
-
-      {/* SISI KANAN: LANYARD 3D */}
-      <div className='w-full h-450px md:h-650px relative animate__animated animate__fadeIn lg:scale-110'>
-        {/* Glow Effect di belakang Lanyard */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 blur-[120px] rounded-full"></div>
-        
-        <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} transparent={true} />
-      </div>
-
+    <div className='flex flex-wrap justify-center md:justify-start items-center gap-4'>
+      <a 
+        href="CV_Rae_Triadi.pdf" 
+        className='bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20' 
+        download
+      >
+        Download CV <i className="ri-download-line"></i>
+      </a>
+      <a 
+        href="#proyek" 
+        className='border border-blue-500 text-blue-500 px-6 py-3 rounded-md hover:bg-blue-500 hover:text-white transition-all'
+      >
+        Lihat Proyek <i className="ri-arrow-down-line"></i>
+      </a>
     </div>
   </div>
 </section>
+{/* Hero Section */}
+
       {/* Tentang */}
       <div className='tentang mt-10 py-10' id='tentang'>
-        <div className='xl:w-2/3 lg:w-full mx-auto p-7 bg-zinc-800 rounded-lg' data-aos="fade-up" data-aos-duration="1000">
+        <div className='xl:w-2/3 lg:w-full mx-auto p-7 adaptive-card border border-zinc-600 rounded-lg' data-aos="fade-up" data-aos-duration="1000">
           <h1 className='text-4xl/snug font-bold mb-4'>Tentang Saya</h1>
           <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md mb-10 sm:hidden' />
           <p className='text-base/loose mb-10'>
-            Fullstack Developer dengan fokus pada pengembangan aplikasi berbasis web menggunakan Laravel, MySQL, dan JavaScript. Memiliki pengalaman dalam membangun sistem end-to-end mulai dari perancangan database, pengembangan backend, hingga implementasi antarmuka pengguna yang responsif.
-            Terbiasa mengembangkan berbagai proyek seperti sistem pendukung keputusan, sistem informasi berbasis web, serta integrasi teknologi IoT menggunakan Python dan computer vision. Memiliki pemahaman yang baik tentang REST API, manajemen database, serta pengembangan aplikasi yang terstruktur dan efisien.
+            Hi, perkenalkan saya Rae Triadi, seorang Web Developer. Saya percaya bahwa fungsionalitas harus berjalan beriringan, sehingga
+            setiap proyek yang saya kembangkan tidak hanya terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
           </p>
           <div className='flex items-center justify-between'>
             <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md sm:block hidden' loading='lazy' />
@@ -96,7 +97,7 @@ function App() {
           </div>
         </div>
 
-        {/* Tools Section */}
+        {/* tools Section */}
         <div className='tools mt-32'>
           <h1 className='text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Tools yang dipakai</h1>
           <p className='xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full base/loose opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
@@ -104,8 +105,8 @@ function App() {
           </p>
           <div className='tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
             {listTools.map(tool => (
-              <div className='flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group' key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad}>
-                <img src={tool.gambar} alt="Tools Image" className='w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900' />
+              <div className='flex items-center gap-2 p-3 border border-zinc-600 rounded-md ' key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad}>
+                <img src={tool.gambar} alt="Tools Image" className='w-14 adaptive-card p-1 group-hover:bg-zinc-900' />
                 <div>
                   <h4 className='font-bold'>{tool.nama}</h4>
                   <p className='opacity-50'>{tool.ket}</p>
@@ -115,6 +116,7 @@ function App() {
           </div>
         </div>
       </div>
+      {/* tools section */}
 
       {/* Proyek */}
       <div className="proyek mt-32 py-10" id='proyek'>
@@ -125,24 +127,20 @@ function App() {
 
         <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 :grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000">
           {listProyek.map(proyek => (
-            <div key={proyek.id} className='p-4 bg-zinc-800 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.dad}>
+            <div key={proyek.id} className='p-4 adaptive-card border border-zinc-500 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.dad}>
               <img src={proyek.gambar} alt="Proyek Image" loading='lazy' />
               <div>
                 <h1 className='text-2xl font-bold my-4'>{proyek.nama}</h1>
                 <p className='text-base/loose mb-4'>{proyek.desk}</p>
                 <div className='flex flex-wrap gap-2'>
                   {proyek.tools.map((tool, index) => (
-                    <p className='py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold' key={index}>{tool}</p>
+                    <p className='py-1 px-3 border border-zinc-500 adaptive-card rounded-md font-semibold' key={index}>{tool}</p>
                   ))}
-                  {proyek.fitur && (
-                    <div className='flex flex-wrap gap-2 mt-4'>
-                      {proyek.fitur.map((fitur, index) => (
-                        <p className='py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold' key={index}>{fitur}</p>
-                      ))}
-                    </div>
-                  )}
+                  {proyek.fitur && proyek.fitur.map((fitur, index) => (
+                    <p className='py-1 px-3 border border-zinc-500 adaptive-card rounded-md font-semibold' key={index}>{fitur}</p>
+                  ))}
                   {proyek.role && (
-                    <p className='py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold mt-4'>{proyek.role}</p>
+                    <p className='py-1 px-3 border border-zinc-500 adaptive-card  rounded-md font-semibold'>{proyek.role}</p>
                   )}
                 </div>
                 <div className='mt-8 text-center'>
@@ -153,6 +151,7 @@ function App() {
           ))}
         </div>
       </div>
+      {/* proyek  */}
 
       {/* Sertifikat */}
       <div className="proyek mt-32 py-10" id='sertifikat'>
@@ -163,7 +162,7 @@ function App() {
 
         <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 :grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000">
           {listSertifikat.map(sertifikat   => (
-            <div key={sertifikat.id} className='p-4 bg-zinc-800 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={sertifikat.dad}>
+            <div key={sertifikat.id} className='p-4 adaptive-card border border-zinc-500 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={sertifikat.dad}>
               <img src={sertifikat.gambar} alt="Sertifikat Image" loading='lazy' />
               <div>
                 <h1 className='text-2xl font-bold my-4'>{sertifikat.nama}</h1>
@@ -187,7 +186,7 @@ function App() {
           Jika Anda tertarik untuk bekerja sama atau memiliki pertanyaan, jangan ragu untuk menghubungi saya.
         </p>
 
-        <form action="https://formsubmit.co/jkotriady@gmail.com" method='POST' className="bg-zinc-800 p-10 sm:w-fit w-full mx-auto rounded-md" autoComplete="off" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+        <form action="https://formsubmit.co/jkotriady@gmail.com" method='POST' className="adaptive-card p-10 sm:w-fit w-full mx-auto border border-zinc-500 rounded-md" autoComplete="off" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label className="font-semibold">Nama Lengkap</label>
@@ -212,6 +211,7 @@ function App() {
           </div>
         </form>
       </div>
+      {/* Contact */}
 
     </>
   )

@@ -163,7 +163,7 @@ export const listProyek = [
     desk: "Proyek tugas kelompok untuk membuat aplikasi web yang dapat membantu pengguna dalam memilih laptop yang sesuai dengan kebutuhan menggunakan metode Weighted Product (WP).",
     fitur: ["Weighted Product", "Laptop Selection"],
     role: "Fullstack Developer",
-    tools: ["PHP", "MySQL","Html", "CSS"],
+    tools: ["PHP", "MySQL"],
     link: "https://github.com/rae4321/spk_pemilihan_laptop",
     dad: "500",
   },
