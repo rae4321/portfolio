@@ -17,14 +17,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="Navbar py-7 flex items-center justify-between relative z-50 px-4 md:px-10">
-  
-  <div className="logo">
-    <h1 
-    className="text-3xl font-bold p-1 rounded-lg transition-colors duration-300"
-    style={{ color: 'var(--text-color)' }}>
-    Portofolio 
-  </h1>
+  <div className="Navbar py-7 flex items-center justify-between relative z-50 px-4 md:px-10">
+    <div className="logo flex items-center gap-2">
+    <img 
+        src="/logo.png"
+        alt="Logo Portofolio" 
+        className="h-14 w-auto object-contain transition-transform duration-300 hover:scale-105" 
+      />
   </div>
 
   <div className="flex items-center gap-5">

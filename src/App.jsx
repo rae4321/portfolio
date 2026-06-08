@@ -51,12 +51,12 @@ function App() {
     <div className='w-full flex flex-col items-center md:items-start text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s px-6 md:px-0'>
     <h1 className='text-5xl/tight mb-6'>Hi, Saya <span className='text-blue-500'>Rae Triadi</span></h1> 
     <p className='text-base md:text-lg leading-relaxed mb-8 opacity-60 max-w-md'>
-      Saya Web Developer dengan pengalaman mengembangkan aplikasi web yang responsif dan user-friendly. Saya memiliki keahlian dalam berbagai teknologi modern.
+      Web Developer berpengalaman dalam mengembangkan aplikasi web yang responsif, interaktif, dan user-friendly. Memiliki keahlian solid dalam menggunakan teknologi modern seperti React, Vite, Tailwind CSS, dan Node.js Terbiasa mengelola version control dengan Git dan siap menghadirkan solusi digital yang efisien.
     </p>
 
     <div className='flex flex-wrap justify-center md:justify-start items-center gap-4'>
       <a 
-        href="CV_Rae_Triadi.pdf" 
+        href="CV_RAE TRIADI.pdf" 
         className='bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20'download>
         Download CV <i className="ri-download-line"></i>
       </a>
@@ -76,8 +76,7 @@ function App() {
           <h1 className='text-4xl/snug font-bold mb-4'>Tentang Saya</h1>
           <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md mb-10 sm:hidden' />
           <p className='text-base/loose mb-10'>
-            Hi, perkenalkan saya Rae Triadi, seorang Web Developer. Saya percaya bahwa fungsionalitas harus berjalan beriringan, sehingga
-            setiap proyek yang saya kembangkan tidak hanya terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
+            Hi, perkenalkan saya Rae Triadi, Lulusan Teknik Informatika yang memiliki pengalaman berharga dalam menyeimbangkan dunia kerja dan akademik. Memiliki minat yang tinggi serta pemahaman mendalam di bidang Teknologi Informasi, khususnya dalam Pengembangan Website, Desain Antarmuka, dan Pengujian Aplikasi. Berorientasi pada detail, adaptif, dan siap berkontribusi secara profesional serta bersaing di industri teknologi yang dinamis.
           </p>
           <div className='flex items-center justify-between'>
             <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md sm:block hidden' loading='lazy' />
@@ -96,13 +95,13 @@ function App() {
 
         {/* tools Section */}
         <div className='tools mt-32'>
-          <h1 className='text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Tools yang dipakai</h1>
-          <p className='xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full base/loose opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <h1 className='text-center text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Tools yang dipakai</h1>
+          <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
             Berikut adalah beberapa tools yang saya gunakan dalam pengembangan aplikasi web.
           </p>
           <div className='tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
             {listTools.map(tool => (
-              <div className='flex items-center gap-2 p-3 border border-zinc-600 rounded-md ' key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad}>
+              <div className='flex items-center gap-2 p-3 adaptive-card border border-zinc-500 rounded-md' key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad}>
                 <img src={tool.gambar} alt="Tools Image" className='w-14 adaptive-card p-1 group-hover:bg-zinc-900' />
                 <div>
                   <h4 className='font-bold'>{tool.nama}</h4>
@@ -141,7 +140,7 @@ function App() {
                   )}
                 </div>
                 <div className='mt-8 text-center'>
-                  <a href={proyek.link} className='bg-blue-500 p-3 rounded-lg block border border-zinc-600' target="_blank" rel="noopener noreferrer">Lihat Kode</a>
+                  <a href={proyek.link} className='bg-blue-500 p-3 rounded-lg block border text-white border-zinc-600' target="_blank" rel="noopener noreferrer">Lihat Proyek</a>
                 </div>
               </div>
             </div>
@@ -167,7 +166,7 @@ function App() {
                 <div className='flex flex-wrap gap-2'>
                 </div>
                 <div className='mt-8 text-center'>
-                  <a href={sertifikat.link} target="_blank" rel="noopener noreferrer" className='bg-blue-500 p-3 rounded-lg block border border-zinc-600'>Lihat Detail</a>
+                  <a href={sertifikat.link} target="_blank" rel="noopener noreferrer" className='bg-blue-500 p-3 rounded-lg block border border-zinc-600 text-white'>Lihat Detail</a>
                 </div>
               </div>
             </div>
@@ -201,7 +200,7 @@ function App() {
             </div>
 
             <div className="text-center">
-              <button type="submit" className="bg-blue-500 p-3 rounded-lg w-full cursor-pointer block border border-zinc-600">
+              <button type="submit" className="bg-blue-500 p-3 rounded-lg w-full cursor-pointer block border border-zinc-600 text-white">
                 Kirim Pesan
               </button>
             </div>
