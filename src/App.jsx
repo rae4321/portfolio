@@ -78,7 +78,7 @@ function App() {
     </div>
   </div>
     <div className='w-full flex flex-col items-center md:items-start text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s px-6 md:px-0'>
-  <h1 className='text-5xl/tight mb-5 flex flex-wrap items-center justify-center md:justify-start gap-3'>
+  <h1 className='text-5xl/tight mb-6 flex flex-wrap items-center justify-center md:justify-start gap-3'>
     <span>Hi, Saya</span>
     <span className='inline-block text-blue-700 w-75 h-15 relative'>
       <TechText
@@ -105,7 +105,7 @@ function App() {
         selection
         labels
         color="currentColor"
-        align="left"
+        align="center"
         draggable
         sweep
       />
