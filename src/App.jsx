@@ -4,6 +4,35 @@ import { listTools, listProyek, listSertifikat } from "./data"
 import Lanyard from './components/Lanyard.jsx'
 import ProfileCard from './components/ProfileCard.jsx';
 import SplashCursor from './components/SplashCursor.jsx';
+import LogoLoop from './components/LogoLoop.jsx';
+import TechText from './components/TechText.jsx';
+import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub } from 'react-icons/si';
+
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev", hoverColor: "#61dafb" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com", hoverColor: "#38bdf8" },
+  { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com", hoverColor: "#f05340" },
+  { node: <SiFigma />, title: "Figma", href: "https://www.figma.com", hoverColor: "#f24e1e" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org", hoverColor: "#3776ab" },
+  { node: <SiVercel />, title: "Vercel", href: "https://vercel.com", hoverColor: "#000000" },
+  { node: <SiSupabase />, title: "Supabase", href: "https://supabase.com", hoverColor: "#3ecf8e" },
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com", hoverColor: "#4479a1" },
+  { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org", hoverColor: "#336791" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://www.javascript.com", hoverColor: "#f7df1e" },
+  { node: <SiPhp />, title: "PHP", href: "https://www.php.net", hoverColor: "#777bb4" },
+  { node: <SiPostman />, title: "Postman", href: "https://www.postman.com", hoverColor: "#ff6c37" },  
+  { node: <SiFlask />, title: "Flask", href: "https://flask.palletsprojects.com", hoverColor: "#000000" },
+  { node: <SiGithub />, title: "GitHub", href: "https://github.com", hoverColor: "#181717" },
+];
+
+const imageLogos = [
+  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+];
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,7 +54,7 @@ function App() {
 />
 
 {/* Hero Section */}
-<section className='hero min-h-[90vh] flex flex-col md:grid md:grid-cols-2 items-center justify-center pt-10 gap-12 md:gap-6'>
+<section className='hero min-h-[90vh] flex flex-col md:grid md:grid-cols-2 items-center justify-center pt-10 gap-12 md:gap-'>
   <div className='order-first md:order-last w-full flex justify-center items-center animate__animated animate__fadeInRight animate__delay-1s'>
     <div className='relative flex justify-center items-center w-full'>
       <div className='w-[85%] max-w-[380px md:max-w-[450px'>
@@ -35,7 +64,7 @@ function App() {
           handle="javicodes"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="/hero.jpeg"
+          avatarUrl="/hero2.jpeg"
           showUserInfo={false}
           enableTilt={true}
           enableMobileTilt={false}
@@ -49,7 +78,39 @@ function App() {
     </div>
   </div>
     <div className='w-full flex flex-col items-center md:items-start text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s px-6 md:px-0'>
-    <h1 className='text-5xl/tight mb-6'>Hi, Saya <span className='text-blue-500'>Rae Triadi</span></h1> 
+  <h1 className='text-5xl/tight mb-5 flex flex-wrap items-center justify-center md:justify-start gap-3'>
+    <span>Hi, Saya</span>
+    <span className='inline-block text-blue-700 w-75 h-15 relative'>
+      <TechText
+        text="Rae Triadi"
+        fontWeight={600}
+        fontSize={40}
+        reveal="letter"
+        dashLength={4}
+        dashGap={2}
+        specks={15}
+        intro="none"
+        introDuration={2}
+        clickKick
+        guides={false}
+        fontFamily=""
+        letterSpacing={-0.05}
+        accentColor="currentColor"
+        reach={200}
+        softness={0.7}
+        lineStyle="dashed"
+        strokeWidth={1.5}
+        speed={1}
+        bounce={0.4}
+        selection
+        labels
+        color="currentColor"
+        align="left"
+        draggable
+        sweep
+      />
+    </span>
+  </h1>
     <p className='text-base md:text-lg leading-relaxed mb-8 opacity-60 max-w-md'>
       Web Developer berpengalaman dalam mengembangkan aplikasi web yang responsif, interaktif, dan user-friendly. Memiliki keahlian solid dalam menggunakan teknologi modern seperti React, Vite, Tailwind CSS, dan Node.js Terbiasa mengelola version control dengan Git dan siap menghadirkan solusi digital yang efisien.
     </p>
@@ -73,13 +134,13 @@ function App() {
       {/* Tentang */}
       <div className='tentang mt-10 py-10' id='tentang'>
         <div className='xl:w-2/3 lg:w-full mx-auto p-7 adaptive-card border border-zinc-600 rounded-lg' data-aos="fade-up" data-aos-duration="1000">
-          <h1 className='text-4xl/snug font-bold mb-4'>Tentang Saya</h1>
+          <h1 className='text-4xl/snug mb-4'>Tentang Saya</h1>
           <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md mb-10 sm:hidden' />
           <p className='text-base/loose mb-10'>
             Hi, perkenalkan saya Rae Triadi, Lulusan Teknik Informatika yang memiliki pengalaman berharga dalam menyeimbangkan dunia kerja dan akademik. Memiliki minat yang tinggi serta pemahaman mendalam di bidang Teknologi Informasi, khususnya dalam Pengembangan Website, Desain Antarmuka, dan Pengujian Aplikasi. Berorientasi pada detail, adaptif, dan siap berkontribusi secara profesional serta bersaing di industri teknologi yang dinamis.
           </p>
           <div className='flex items-center justify-between'>
-            <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md sm:block hidden' loading='lazy' />
+            {/*<img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md sm:block hidden' loading='lazy' />*/}
             <div className='flex items-center gap-6'>
               <div>
                 <h1 className='text-4xl mb-1'>4<span className='text-blue-500'>+</span></h1>
@@ -95,10 +156,11 @@ function App() {
 
         {/* tools Section */}
         <div className='tools mt-32'>
-          <h1 className='text-center text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Tools yang dipakai</h1>
+          <h1 className='text-center text-4xl/snug mb-4' data-aos="fade-up" data-aos-duration="1000">Tools yang dipakai</h1>
           <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
             Berikut adalah beberapa tools yang saya gunakan dalam pengembangan aplikasi web.
           </p>
+          {/* ikon tools lama
           <div className='tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
             {listTools.map(tool => (
               <div className='flex items-center gap-2 p-3 adaptive-card border border-zinc-500 rounded-md' key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad}>
@@ -109,14 +171,22 @@ function App() {
                 </div>
               </div>
             ))}
-          </div>
+          </div>*/}
         </div>
       </div>
       {/* tools section */}
 
+      <div style={{ position: 'relative', overflow: 'hidden' }} className="py-6">
+        <LogoLoop
+          logos={techLogos}
+          speed={30}
+          direction="left"
+        />
+      </div>
+
       {/* Proyek */}
       <div className="proyek mt-32 py-10" id='proyek'>
-        <h1 className='text-center text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Proyek</h1>
+        <h1 className='text-center text-4xl/snug mb-4' data-aos="fade-up" data-aos-duration="1000">Proyek</h1>
         <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
           Berikut adalah beberapa proyek yang telah saya kerjakan.
         </p>
@@ -126,7 +196,7 @@ function App() {
             <div key={proyek.id} className='p-4 adaptive-card border border-zinc-500 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.dad}>
               <img src={proyek.gambar} alt="Proyek Image" loading='lazy' />
               <div>
-                <h1 className='text-2xl font-bold my-4'>{proyek.nama}</h1>
+                <h1 className='text-2xl my-4'>{proyek.nama}</h1>
                 <p className='text-base/loose mb-4'>{proyek.desk}</p>
                 <div className='flex flex-wrap gap-2'>
                   {proyek.tools.map((tool, index) => (
@@ -151,7 +221,7 @@ function App() {
 
       {/* Sertifikat */}
       <div className="proyek mt-32 py-10" id='sertifikat'>
-        <h1 className='text-center text-4xl/snug font-bold mb-4' data-aos="fade-up" data-aos-duration="1000">Sertifikat</h1>
+        <h1 className='text-center text-4xl/snug mb-4' data-aos="fade-up" data-aos-duration="1000">Sertifikat</h1>
         <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
           Berikut adalah beberapa sertifikat yang telah saya peroleh.
         </p>
@@ -161,7 +231,7 @@ function App() {
             <div key={sertifikat.id} className='p-4 adaptive-card border border-zinc-500 rounded-md' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={sertifikat.dad}>
               <img src={sertifikat.gambar} alt="Sertifikat Image" loading='lazy' />
               <div>
-                <h1 className='text-2xl font-bold my-4'>{sertifikat.nama}</h1>
+                <h1 className='text-2xl my-4'>{sertifikat.nama}</h1>
                 <p className='text-base/loose mb-4'>{sertifikat.ket}</p>
                 <div className='flex flex-wrap gap-2'>
                 </div>
@@ -177,7 +247,7 @@ function App() {
 
       {/* Contact */}
       <div className="contact mt-32 sm:p-10 p-0" id='kontak'>
-        <h1 className="text-4xl mb-2 font-bold text-center" data-aos="fade-up" data-aos-duration="1000">Kontak</h1>
+        <h1 className="text-4xl mb-2 text-center" data-aos="fade-up" data-aos-duration="1000">Kontak</h1>
         <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
           Jika Anda tertarik untuk bekerja sama atau memiliki pertanyaan, jangan ragu untuk menghubungi saya.
         </p>

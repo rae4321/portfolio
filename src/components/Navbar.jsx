@@ -19,10 +19,10 @@ const Navbar = () => {
   return (
   <div className="Navbar py-7 flex items-center justify-between relative z-50 px-4 md:px-10">
     <div className="logo flex items-center gap-2">
-    <img 
-        src="/logo.png"
+    <img
+        src="/favicon_new_2.png"
         alt="Logo Portofolio" 
-        className="h-14 w-auto object-contain transition-transform duration-300 hover:scale-105" 
+        className="h-30 w-auto object-contain transition-transform duration-300 hover:scale-105"
       />
   </div>
 
