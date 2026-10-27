@@ -17,9 +17,6 @@ const Footer = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="https://github.com/rae4321" target="_blank" rel="noopener noreferrer">
-            <i className="ri-github-fill ri-2x"></i>
-          </a>
           <a href="https://www.instagram.com/kepalaadua/" target="_blank" rel="noopener noreferrer">
             <i className="ri-instagram-fill ri-2x"></i>
           </a>

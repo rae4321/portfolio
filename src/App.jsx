@@ -6,7 +6,7 @@ import ProfileCard from './components/ProfileCard.jsx';
 import SplashCursor from './components/SplashCursor.jsx';
 import LogoLoop from './components/LogoLoop.jsx';
 import TechText from './components/TechText.jsx';
-import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub } from 'react-icons/si';
+import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub, SiNodedotjs } from 'react-icons/si';
 
 
 const techLogos = [
@@ -24,6 +24,7 @@ const techLogos = [
   { node: <SiPostman />, title: "Postman", href: "https://www.postman.com", hoverColor: "#ff6c37" },  
   { node: <SiFlask />, title: "Flask", href: "https://flask.palletsprojects.com", hoverColor: "#000000" },
   { node: <SiGithub />, title: "GitHub", href: "https://github.com", hoverColor: "#181717" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org", hoverColor: "#339933" },
 ];
 
 const imageLogos = [
@@ -50,7 +51,7 @@ function App() {
   COLOR_UPDATE_SPEED={10}
   SHADING
   RAINBOW_MODE={false}
-  COLOR="#A855F7"
+  COLOR="#6bbcff"
 />
 
 {/* Hero Section */}
@@ -78,16 +79,16 @@ function App() {
     </div>
   </div>
     <div className='w-full flex flex-col items-center md:items-start text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s px-6 md:px-0'>
-  <h1 className='text-5xl/tight mb-6 flex flex-wrap items-center justify-center md:justify-start gap-3'>
+  <h1 className='text-5xl/tight mb-4 flex flex-wrap items-center justify-center md:justify-start'>
     <span>Hi, Saya</span>
-    <span className='inline-block text-blue-700 w-75 h-15 relative'>
+    <span className='inline-block text-blue-500 w-75 h-15'>
       <TechText
         text="Rae Triadi"
         fontWeight={600}
         fontSize={40}
         reveal="letter"
         dashLength={4}
-        dashGap={2}
+        dashGap={0}
         specks={15}
         intro="none"
         introDuration={2}
@@ -135,7 +136,6 @@ function App() {
       <div className='tentang mt-10 py-10' id='tentang'>
         <div className='xl:w-2/3 lg:w-full mx-auto p-7 adaptive-card border border-zinc-600 rounded-lg' data-aos="fade-up" data-aos-duration="1000">
           <h1 className='text-4xl/snug mb-4'>Tentang Saya</h1>
-          <img src={DataImage.HeroImage} alt="Image" className='w-12 rounded-md mb-10 sm:hidden' />
           <p className='text-base/loose mb-10'>
             Hi, perkenalkan saya Rae Triadi, Lulusan Teknik Informatika yang memiliki pengalaman berharga dalam menyeimbangkan dunia kerja dan akademik. Memiliki minat yang tinggi serta pemahaman mendalam di bidang Teknologi Informasi, khususnya dalam Pengembangan Website, Desain Antarmuka, dan Pengujian Aplikasi. Berorientasi pada detail, adaptif, dan siap berkontribusi secara profesional serta bersaing di industri teknologi yang dinamis.
           </p>
@@ -176,10 +176,10 @@ function App() {
       </div>
       {/* tools section */}
 
-      <div style={{ position: 'relative', overflow: 'hidden' }} className="py-6">
+      <div style={{ position: 'relative', overflow: 'hidden' }} className="py-10"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <LogoLoop
           logos={techLogos}
-          speed={30}
+          speed={50}
           direction="left"
         />
       </div>
