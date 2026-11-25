@@ -9,6 +9,7 @@ import TechText from './components/TechText.jsx';
 import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub, SiNodedotjs } from 'react-icons/si';
 import { Routes, Route, Link } from 'react-router-dom'; 
 import DetailProyek from './components/pages/DetailProyek.jsx';
+import NotFound from './components/pages/NotFound.jsx';
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev", hoverColor: "#61dafb" },
@@ -32,19 +33,6 @@ const techLogos = [
 function Home() {
   return (
     <>
-      <SplashCursor
-        DENSITY_DISSIPATION={3.5}
-        VELOCITY_DISSIPATION={2}
-        PRESSURE={0.1}
-        CURL={3}
-        SPLAT_RADIUS={0.2}
-        SPLAT_FORCE={6000}
-        COLOR_UPDATE_SPEED={10}
-        SHADING
-        RAINBOW_MODE={false}
-        COLOR="#6bbcff"
-      />
-
       {/* Hero Section */}
       <section className='hero min-h-[90vh] flex flex-col md:grid md:grid-cols-2 items-center justify-center pt-10 gap-12 md:gap-0'>
         <div className='order-first md:order-last w-full flex justify-center items-center animate__animated animate__fadeInRight animate__delay-1s'>
@@ -72,7 +60,7 @@ function Home() {
         <div className='w-full flex flex-col items-center md:items-start text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s px-6 md:px-0'>
           <h1 className='text-5xl/tight mb-4 flex flex-wrap items-center justify-center md:justify-start'>
             <span>Hi, Saya</span>
-            <span className='inline-block text-blue-500 w-75 h-15'>
+            <span className='inline-block text-amber-600 w-75 h-15'>
               <TechText
                 text="Rae Triadi"
                 fontWeight={600}
@@ -132,11 +120,11 @@ function Home() {
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-6'>
               <div>
-                <h1 className='text-4xl mb-1'>4<span className='text-blue-500'>+</span></h1>
+                <h1 className='text-4xl mb-1'>4<span className='text-amber-600'>+</span></h1>
                 <p>Proyek Selesai</p>
               </div>
               <div>
-                <h1 className='text-4xl mb-1'>2<span className='text-blue-500'>+</span></h1>
+                <h1 className='text-4xl mb-1'>2<span className='text-amber-600'>+</span></h1>
                 <p>Tahun Pengalaman</p>
               </div>
             </div>
@@ -297,10 +285,27 @@ function Home() {
 // ROUTING UTAMA
 function App() {
   return (
+    <>
+    <SplashCursor
+        DENSITY_DISSIPATION={3.5}
+        VELOCITY_DISSIPATION={2}
+        PRESSURE={0.1}
+        CURL={3}
+        SPLAT_RADIUS={0.2}
+        SPLAT_FORCE={6000}
+        COLOR_UPDATE_SPEED={10}
+        SHADING
+        RAINBOW_MODE={false}
+        COLOR="#6bbcff"
+      />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/proyek/:id" element={<DetailProyek />} />
+
+      <Route path="/404" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 }
 

@@ -41,10 +41,10 @@ const Navbar = () => {
         : "-top-32 opacity-0 md:opacity-100"
       } 
       md:top-0 md:pointer-events-auto`}>
-      <li><a href="#tentang" className="text-base font-medium hover:text-blue-500">Tentang</a></li>
-      <li><a href="#proyek" className="text-base font-medium hover:text-blue-500">Proyek</a></li>
-      <li><a href="#sertifikat" className="text-base font-medium hover:text-blue-500">Sertifikat</a></li>
-      <li><a href="#kontak" className="text-base font-medium hover:text-blue-500">Kontak</a></li>
+      <li><a href="#tentang" className="text-base font-medium hover:text-amber-600">Tentang</a></li>
+      <li><a href="#proyek" className="text-base font-medium hover:text-amber-600">Proyek</a></li>
+      <li><a href="#sertifikat" className="text-base font-medium hover:text-amber-600">Sertifikat</a></li>
+      <li><a href="#kontak" className="text-base font-medium hover:text-amber-600">Kontak</a></li>
     </ul>
 
 
