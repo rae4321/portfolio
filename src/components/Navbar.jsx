@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Toogle from "./Toogle.jsx";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -19,13 +20,13 @@ const Navbar = () => {
   return (
   <div className="Navbar flex items-center justify-between relative z-50 px-4 md:px-10">
     <div className="logo flex items-center gap-2">
-      <a href="index.html">
+      <Link to="/">
     <img
         src="/logo_1.png"
         alt="Logo Portofolio" 
         className="h-30 w-auto object-contain transition-transform duration-300 hover:scale-105"
         />
-      </a>
+      </Link>
   </div>
 
   <div className="flex items-center gap-5">

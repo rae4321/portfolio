@@ -121,6 +121,8 @@ import Proyek3 from "/assets/proyek/proyek3.png";
 import Proyek4 from "/assets/proyek/proyek4.png";
 import Proyek5 from "/assets/proyek/proyek5.webp";
 import Proyek6 from "/assets/proyek/proyek6.webp";
+import Proyek7 from "/assets/proyek/proyek7.png";
+import Proyek8 from "/assets/proyek/proyek8.png";
 
 export const listProyek = [
   {
@@ -131,18 +133,20 @@ export const listProyek = [
     tools: ["Javascript", "OpenCV", "Python", "TailwindCSS", "Flask", "MySQL"],
     fitur: ["Face Recognition", "IoT", "Web Integration"],
     role: "Fullstack Developer",
-    link: "https://github.com/rae4321/sistem-palang-pintu-otomatis-face-recognition",
+    github: "https://github.com/rae4321/sistem-palang-pintu-otomatis-face-recognition",
+    link: "",
     dad: "200",
   },
   {
     id: 2,
     gambar: Proyek2,
-    nama: "Landing Page",
-    desk: "Landing page hitung mundur pergantian tahun baru dengan animasi yang menarik.",
-    fitur: ["Countdown Timer", "Animations"],
+    nama: "Undangan Pernikahan",
+    desk: "Aplikasi web undangan pernikahan yang menampilkan informasi acara, galeri foto, dan fitur RSVP. Aplikasi ini dirancang dengan antarmuka yang responsif dan menarik menggunakan ReactJS dan TailwindCSS.",
+    fitur: ["Countdown Timer", "Animations", "RSVP Form"],
     role: "Frontend Developer",
-    tools: ["ReactJS", "TailwindCSS", "Javascript"],
-    link: "https://github.com/rae4321/project-selamat-taun-baru-2026/tree/main",
+    tools: ["ReactJS", "TailwindCSS", "Javascript", "supabase", "vite", "vercel"],
+    github: "https://github.com/rae4321/wedding-hani-andri",
+    link: "https://wedding-hani-andri.vercel.app/",
     dad: "300",
   },
   {
@@ -153,7 +157,8 @@ export const listProyek = [
     tools: ["PHP", "MySQL", "Bootstrap", "AdminLTE"],
     fitur: ["Member Manajemen", "Pencatatan Iuran", "Laporan Keuangan"],
     role: "Backend Developer",
-    link: "https://github.com/rae4321/project-kelompok-ipl",
+    github: "https://github.com/rae4321/project-kelompok-ipl",
+    link: "",
     dad: "400",
   },
   {
@@ -164,9 +169,34 @@ export const listProyek = [
     fitur: ["Weighted Product", "Laptop Selection"],
     role: "Fullstack Developer",
     tools: ["PHP", "MySQL"],
-    link: "https://github.com/rae4321/spk_pemilihan_laptop",
+    github: "https://github.com/rae4321/spk_pemilihan_laptop",
+    link: "",
     dad: "500",
   },
+  {
+    id: 5,
+    gambar: Proyek8,
+    nama: "Bridge Page",
+    desk: "Aplikasi web yang berfungsi sebagai jembatan antara pengguna dan layanan yang tersedia.",
+    fitur: [],
+    role: "Fullstack Developer",
+    tools: ["React", "TailwindCSS", "vite", "cloudflare pages"],
+    github: "https://github.com/rae4321/bridge-page",
+    link: "https://kurasipilihan.my.id/",
+    dad: "600",
+  },
+  {
+    id: 6,
+    gambar: Proyek7,
+    nama: "Dapur Mamaza",
+    desk: "Aplikasi web untuk mengelola pesanan makanan dan minuman di Dapur Mamaza, dengan fitur manajemen menu, pemesanan online, dan laporan penjualan.",
+  tools: ["TypeScript", "JavaScript", "React", "TailwindCSS", "vite", "vercel"],
+    fitur: ["Pemesanan Online", "Profile Menu"],
+    role: "Frontend Developer",
+    github: "https://github.com/rae4321/dapur-mamaza",
+    link: "https://dapurmamaza.vercel.app/",
+    dad: "700",
+  }
 ];
 
 import Sertifikat1 from "/assets/sertifikat/sertifikat1.webp";
@@ -175,7 +205,7 @@ import Sertifikat3 from "/assets/sertifikat/sertifikat3.jpg";
 import Sertifikat4 from "/assets/sertifikat/sertifikat4.jpeg";
 import Sertifikat5 from "/assets/sertifikat/sertifikat5.jpg";
 import Sertifikat6 from "/assets/sertifikat/sertifikat6.jpg";
-import { label } from "framer-motion/client";
+import { g, label, li, link } from "framer-motion/client";
 
 export const listSertifikat = [
   {
