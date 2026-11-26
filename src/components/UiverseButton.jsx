@@ -29,14 +29,29 @@ const UiverseButton = ({
     );
   }
 
-  // Untuk link eksternal (Demo/GitHub) atau unduhan file (Download CV)
+  // Untuk link eksternal (Demo/GitHub), anchor (#proyek), atau unduhan file (Download CV)
   if (href) {
+    const isAnchor = href.startsWith('#');
+
+    const handleAnchorClick = (e) => {
+      if (isAnchor) {
+        e.preventDefault();
+        const targetId = href.replace('#', '');
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      if (onClick) onClick(e);
+    };
+
     return (
       <a
         href={href}
+        onClick={handleAnchorClick}
         download={download}
-        target={download ? undefined : '_blank'}
-        rel={download ? undefined : 'noopener noreferrer'}
+        target={download || isAnchor ? undefined : '_blank'}
+        rel={download || isAnchor ? undefined : 'noopener noreferrer'}
         className={btnClass}
       >
         {innerContent}
