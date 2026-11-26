@@ -92,10 +92,6 @@ function Home() {
               />
             </span>
           </h1>
-          <p className='text-base md:text-lg leading-relaxed mb-8 opacity-60 max-w-md'>
-            Web Developer berpengalaman dalam mengembangkan aplikasi web yang responsif, interaktif, dan user-friendly. Memiliki keahlian solid dalam menggunakan teknologi modern seperti React, Vite, Tailwind CSS, dan Node.js Terbiasa mengelola version control dengan Git dan siap menghadirkan solusi digital yang efisien.
-          </p>
-
           <div className="flex flex-wrap items-center gap-5 pt-2">
   {/* Tombol 1: Download CV (Warna Kuning bawaan) */}
   <UiverseButton href="CV_RAE TRIADI.pdf" download>
