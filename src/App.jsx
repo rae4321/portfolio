@@ -275,7 +275,7 @@ function Home() {
             </div>
 
             <div className="text-center px-1 pb-1">
-  <UiverseButton type="submit" variant="blue" className="w-full">
+  <UiverseButton type="submit" variant="yellow" className="w-full">
     Kirim Pesan
   </UiverseButton>
 </div>
