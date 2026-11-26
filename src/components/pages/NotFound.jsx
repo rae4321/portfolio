@@ -20,7 +20,7 @@ const NotFound = () => {
         />
       </div>
 
-      {/* Judul & Keterangan */}
+      {/* Judul */}
       <h1 className="text-2xl sm:text-3xl font-bold mb-3">
         Oops! Halaman Tidak Ditemukan
       </h1>
@@ -28,7 +28,7 @@ const NotFound = () => {
         Maaf, tautan demo, atau halaman yang Anda tuju belum tersedia saat ini.
       </p>
 
-      {/* Tombol Kembali */}
+      {/* Button Kembali */}
       <UiverseButton to="/">
   <i className="ri-arrow-left-line"></i> Kembali ke Beranda
 </UiverseButton>
