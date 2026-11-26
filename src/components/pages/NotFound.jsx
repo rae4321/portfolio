@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import UiverseButton from './CSS/UiverseButton.css';
+import UiverseButton from '../UiverseButton';
 
 
 const NotFound = () => {
