@@ -158,7 +158,7 @@ function Home() {
             <a
               href="CV_RAE TRIADI.pdf"
               download
-              className="hidden sm:inline-flex items-center gap-1.5 transition hover:opacity-100 hover:text-lime-400"
+              className="inline-flex items-center gap-1.5 transition hover:opacity-100 hover:text-lime-400"
             >
               <span>DOWNLOAD CV</span>
               <i className="ri-download-line"></i>
@@ -168,7 +168,7 @@ function Home() {
               className="group inline-flex items-center gap-1.5 transition hover:opacity-100 hover:text-lime-400"
             >
               <span>LIHAT PROYEK</span>
-              <span className="inline-block transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
+              <span className="inline-block transition-transform duration-300 group-hover:translate-y-0.5"><i className="ri-arrow-down-line"></i></span>
             </a>
           </div>
         </div>

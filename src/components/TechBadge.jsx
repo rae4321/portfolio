@@ -26,6 +26,8 @@ import {
   SiCloudflare,
   SiGit,
   SiGithub,
+  SiArduino,
+  SiCmake,
 } from 'react-icons/si';
 import { FaCode, FaMicrochip, FaCss3Alt } from 'react-icons/fa6';
 
@@ -69,6 +71,8 @@ const techIconMap = {
   cloudflare: { icon: SiCloudflare, color: 'text-orange-400' },
   git: { icon: SiGit, color: 'text-orange-500' },
   github: { icon: SiGithub, color: 'text-current' },
+  arduino: { icon: SiArduino, color: 'text-blue-400' },
+  cmake: { icon: SiCmake, color: 'text-blue-400' },
 };
 
 const TechBadge = ({ name }) => {

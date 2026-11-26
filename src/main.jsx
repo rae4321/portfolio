@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'; // Tambahkan import ini
 import './index.css';
 import App from './App.jsx';
 import Navbar from './components/Navbar.jsx';
+import 'animate.css';
 
 import 'remixicon/fonts/remixicon.css';
 import Footer from './components/Footer.jsx';
