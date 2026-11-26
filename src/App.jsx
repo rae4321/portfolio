@@ -5,7 +5,7 @@ import Lanyard from './components/Lanyard.jsx';
 import SplashCursor from './components/SplashCursor.jsx';
 import LogoLoop from './components/LogoLoop.jsx';
 import TechText from './components/TechText.jsx';
-import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub, SiNodedotjs, SiGooglegemini, SiClaudecode, SiCloudflare, SiCloudflarepages, LuRoute } from 'react-icons/si';
+import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub, SiNodedotjs, SiGooglegemini, SiClaudecode, SiCloudflare, SiCloudflarepages,} from 'react-icons/si';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { Routes, Route, Link } from 'react-router-dom'; 
 import DetailProyek from './components/pages/DetailProyek.jsx';
