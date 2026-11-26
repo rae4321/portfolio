@@ -274,11 +274,12 @@ function Home() {
               <textarea name="pesan" id="pesan" cols="45" rows="7" placeholder="Pesan..." className="border border-zinc-500 p-2 rounded-md" required></textarea>
             </div>
 
-            <div className="text-center">
-              <button type="submit" className="bg-blue-500 p-3 rounded-lg w-full cursor-pointer block border border-zinc-600 text-white">
-                Kirim Pesan
-              </button>
-            </div>
+            <div className="text-center px-1 pb-1">
+  <UiverseButton type="submit" variant="blue" className="w-full">
+    Kirim Pesan
+  </UiverseButton>
+</div>
+
           </div>
         </form>
       </div>
