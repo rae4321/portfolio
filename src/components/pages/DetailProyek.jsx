@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { listProyek } from '../../data';
 import NotFound from './NotFound';
+import UiverseButton from '../UiverseButton';
 
 const DetailProyek = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ const DetailProyek = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
-  
+
   const proyek = listProyek.find((item) => item.id === parseInt(id));
 
   // Jika ID tidak ditemukan, tampilkan halaman NotFound
@@ -67,42 +68,23 @@ const DetailProyek = () => {
       </div>
 
       {/* Tombol Aksi: Demo & GitHub Repo */}
-      <div className="flex flex-wrap gap-4">
-        {proyek.link && proyek.link.trim() !== "" ? (
-          <a 
-            href={proyek.link} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-all"
-          >
-            <i className="ri-external-link-line text-lg"></i> Demo
-          </a>
-        ) : (
-          <Link 
-            to="/404" 
-            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-all"
-          >
-            <i className="ri-external-link-line text-lg"></i> Demo
-          </Link>
-        )}
+      <div className="flex flex-wrap gap-6 pt-2">
+        {/* Tombol 1: Demo (Kuning) */}
+        <UiverseButton
+          href={proyek.link && proyek.link.trim() !== "" ? proyek.link : undefined}
+          to={!proyek.link || proyek.link.trim() === "" ? "/404" : undefined}
+        >
+          <i className="ri-external-link-line text-lg"></i> Demo
+        </UiverseButton>
 
-        {proyek.github && proyek.github.trim() !== "" ? (
-          <a 
-            href={proyek.github} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-2 border border-zinc-500 adaptive-card hover:bg-zinc-800 hover:text-white px-6 py-3 rounded-lg transition-all"
-          >
-            <i className="ri-github-fill text-lg"></i> GitHub Repo
-          </a>
-        ) : (
-          <Link 
-            to="/404" 
-            className="inline-flex items-center gap-2 border border-zinc-500 adaptive-card hover:bg-zinc-800 hover:text-white px-6 py-3 rounded-lg transition-all"
-          >
-            <i className="ri-github-fill text-lg"></i> GitHub Repo
-          </Link>
-        )}
+        {/* Tombol 2: GitHub Repo (Biru) */}
+        <UiverseButton
+          variant="blue"
+          href={proyek.github && proyek.github.trim() !== "" ? proyek.github : undefined}
+          to={!proyek.github || proyek.github.trim() === "" ? "/404" : undefined}
+        >
+          <i className="ri-github-fill text-lg"></i> GitHub Repo
+        </UiverseButton>
       </div>
     </div>
   );
