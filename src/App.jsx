@@ -10,6 +10,7 @@ import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupab
 import { Routes, Route, Link } from 'react-router-dom'; 
 import DetailProyek from './components/pages/DetailProyek.jsx';
 import NotFound from './components/pages/NotFound.jsx';
+import UiverseButton from './components/UiverseButton.jsx';
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev", hoverColor: "#61dafb" },
@@ -180,14 +181,16 @@ function Home() {
           </h1>
 
           {/* 4. mt-auto mendorong tombol agar selalu menempel sejajar di bagian paling bawah card */}
-          <div className='mt-auto pt-4 text-center flex gap-2'>
-            <Link 
-              to={`/proyek/${proyek.id}`} 
-              className='bg-blue-500 hover:bg-blue-600 transition-all p-3 rounded-lg flex-1 border text-white border-zinc-600'
-            >
-              Detail Proyek
-            </Link>
-          </div>
+          <div className='mt-auto pt-4 px-1 pb-1 text-center flex gap-2'>
+  <UiverseButton 
+    to={`/proyek/${proyek.id}`} 
+    variant="yellow" 
+    className="w-full"
+  >
+    Detail Proyek
+  </UiverseButton>
+</div>
+
         </div>
       </div>
     ))}
