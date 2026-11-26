@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import './CSS/UiverseButton.css';
+
 
 const NotFound = () => {
   useEffect(() => {
@@ -27,12 +29,9 @@ const NotFound = () => {
       </p>
 
       {/* Tombol Kembali */}
-      <Link
-        to="/#proyek"
-        className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-all shadow-lg shadow-amber-500/20"
-      >
-        <i className="ri-arrow-left-line text-lg"></i> Kembali
-      </Link>
+      <UiverseButton to="/">
+  <i className="ri-arrow-left-line"></i> Kembali ke Beranda
+</UiverseButton>
     </div>
   );
 };
