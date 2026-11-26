@@ -96,18 +96,18 @@ function Home() {
             Web Developer berpengalaman dalam mengembangkan aplikasi web yang responsif, interaktif, dan user-friendly. Memiliki keahlian solid dalam menggunakan teknologi modern seperti React, Vite, Tailwind CSS, dan Node.js Terbiasa mengelola version control dengan Git dan siap menghadirkan solusi digital yang efisien.
           </p>
 
-          <div className='flex flex-wrap justify-center md:justify-start items-center gap-4'>
-            <a 
-              href="CV_RAE TRIADI.pdf" 
-              className='bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20' download>
-              Download CV <i className="ri-download-line"></i>
-            </a>
-            <a href="#proyek" 
-              className='border border-blue-500 text-blue-500 px-6 py-3 rounded-md hover:bg-blue-500 hover:text-white transition-all'
-            >
-              Lihat Proyek <i className="ri-arrow-down-line"></i>
-            </a>
-          </div>
+          <div className="flex flex-wrap items-center gap-5 pt-2">
+  {/* Tombol 1: Download CV (Warna Kuning bawaan) */}
+  <UiverseButton href="CV_RAE TRIADI.pdf" download>
+    Download CV <i className="ri-download-line"></i>
+  </UiverseButton>
+
+  {/* Tombol 2: Lihat Proyek (Warna Biru) */}
+  <UiverseButton href="#proyek" variant="blue">
+    Lihat Proyek <i className="ri-arrow-down-line"></i>
+  </UiverseButton>
+</div>
+
         </div>
       </section>
 
