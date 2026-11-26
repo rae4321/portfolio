@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { listProyek } from '../../data';
 import NotFound from './NotFound';
 import UiverseButton from '../UiverseButton';
+import TechBadge from '../TechBadge';
 
 const DetailProyek = () => {
   const { id } = useParams();
@@ -20,13 +21,9 @@ const DetailProyek = () => {
 
   return (
     <div className="max-w-4xl mx-auto py-20 px-4">
-      <Link 
-        to="/#proyek" 
-        aria-label="Kembali ke Daftar Proyek"
-        className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-zinc-500 adaptive-card hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all mb-6"
-      >
-        <i className="ri-arrow-left-line text-xl"></i>
-      </Link>
+      <UiverseButton to="/">
+        <i className="ri-arrow-left-line"></i> 
+      </UiverseButton>
 
       {/* Gambar Proyek */}
       <img 
@@ -37,7 +34,7 @@ const DetailProyek = () => {
 
       {/* Judul & Role */}
       <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
-        <h1 className="text-4xl font-bold">{proyek.nama}</h1>
+        <h1 className="text-4xl font-semibold">{proyek.nama}</h1>
         {proyek.role && (
           <span className="py-1 px-4 border border-zinc-500 rounded-full">
             {proyek.role}
@@ -50,22 +47,15 @@ const DetailProyek = () => {
         {proyek.deskLengkap || proyek.desk}
       </p>
 
-      {/* Teknologi & Fitur */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold mb-3">Teknologi & Fitur</h3>
-        <div className="flex flex-wrap gap-2">
-          {proyek.tools.map((tool, index) => (
-            <span key={index} className="py-1 px-3 border border-zinc-500 rounded-md">
-              {tool}
-            </span>
-          ))}
-          {proyek.fitur && proyek.fitur.map((fitur, index) => (
-            <span key={index} className="py-1 px-3 border border-zinc-500 rounded-md">
-              {fitur}
-            </span>
-          ))}
-        </div>
-      </div>
+      {/* Tech Stack */}
+<div className="mb-8">
+  <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+  <div className="flex flex-wrap gap-2.5">
+    {proyek.tools.map((tool, index) => (
+      <TechBadge key={index} name={tool} />
+    ))}
+  </div>
+</div>
 
       {/* Tombol Aksi: Demo & GitHub Repo */}
       <div className="flex flex-wrap gap-6 pt-2">

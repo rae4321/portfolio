@@ -9,8 +9,8 @@
   font-size: 1rem;
   cursor: pointer;
   position: relative;
-  font-family: "Rubik", sans-serif;
-  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   line-height: 1;
   padding: 1px;
   transform: translate(-4px, -4px);
@@ -99,6 +99,11 @@
 .uiverse-retro-btn.btn-blue {
   --btn-bg: #3b82f6;
   color: #ffffff;
+}
+
+.uiverse-retro-btn.btn-yellowgreen {
+  --btn-bg: #9acd32;
+  color: var(--stone-800);
 }
 
 @keyframes uiverse-dots {

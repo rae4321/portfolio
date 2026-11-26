@@ -30,8 +30,8 @@ const NotFound = () => {
 
       {/* Button Kembali */}
       <UiverseButton to="/">
-  <i className="ri-arrow-left-line"></i> Kembali ke Beranda
-</UiverseButton>
+        <i className="ri-arrow-left-line"></i> Kembali ke Beranda
+      </UiverseButton>
     </div>
   );
 };

@@ -12,7 +12,13 @@ const UiverseButton = ({
   variant = 'yellow', 
   className = '' 
 }) => {
-  const btnClass = `uiverse-retro-btn ${variant === 'blue' ? 'btn-blue' : ''} ${className}`;
+  // Daftar varian warna yang tersedia (yellow sebagai default, ditambah blue & yellowgreen)
+  const variantClasses = {
+    blue: 'btn-blue',
+    yellowgreen: 'btn-yellowgreen',
+  };
+
+  const btnClass = `uiverse-retro-btn ${variantClasses[variant] || ''} ${className}`;
 
   const innerContent = (
     <div>

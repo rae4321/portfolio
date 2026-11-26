@@ -4,21 +4,10 @@ const Footer = () => {
   return (
     <footer className="mt-32 pb-10 w-full">
       {/* Container Konten Atas */}
-      <div className="py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
-        <h1 className="text-2xl font-bold text-amber-600">
-          Portofolio
-        </h1>
-        
-        <div className="flex gap-7 ">
-          <a href="#beranda" className="hover:text-amber-600 transition-colors">Beranda</a>
-          <a href="#tentang" className="hover:text-amber-600 transition-colors">Tentang</a>
-          <a href="#proyek" className="hover:text-amber-600 transition-colors">Proyek</a>
-          <a href="#sertifikat" className="hover:text-amber-600 transition-colors">Sertifikat</a>
-        </div>
-
+      <div className="py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-center items-center">
         <div className="flex items-center gap-3 ">
-          <a href="https://www.instagram.com/kepalaadua/" target="_blank" rel="noopener noreferrer">
-            <i className="ri-instagram-fill ri-2x"></i>
+          <a href="mailto:jkotriady@gmail.com" target="_blank" rel="noopener noreferrer">
+            <i className="ri-mail-fill ri-2x"></i>
           </a>
           <a href="https://www.linkedin.com/in/rae-triadi-990513215/" target="_blank" rel="noopener noreferrer">
             <i className="ri-linkedin-fill ri-2x"></i>
