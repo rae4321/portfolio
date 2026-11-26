@@ -233,16 +233,17 @@ function Home() {
           </p>
 
           {/* 5. mt-auto mendorong tombol selalu sejajar di bagian bawah card */}
-          <div className='mt-auto pt-4 text-center flex gap-2'>
-            <a 
-              href={sertifikat.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className='bg-blue-500 hover:bg-blue-600 transition-all p-3 rounded-lg flex-1 border border-zinc-600 text-white'
-            >
-              Lihat Detail
-            </a>
-          </div>
+          <div className='mt-auto pt-4 px-1 pb-1 text-center flex gap-2'>
+  <UiverseButton 
+    href={sertifikat.link && sertifikat.link.trim() !== "" ? sertifikat.link : undefined}
+    to={!sertifikat.link || sertifikat.link.trim() === "" ? "/404" : undefined}
+    variant="yellow" 
+    className="w-full"
+  >
+    Lihat Detail
+  </UiverseButton>
+</div>
+
         </div>
       </div>
     ))}
