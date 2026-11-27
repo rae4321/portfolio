@@ -9,7 +9,7 @@
 
 /* Variabel saat Dark Mode aktif */
 [data-theme='dark'] {
-  --bg-color: #080514;
+  --bg-color: #1e1e22;
   --text-color: #f5f5f5;
   --btn-bg: #333333;
   --card-bg: #27272a;     /* Warna zinc-800 saat gelap */

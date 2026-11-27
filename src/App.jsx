@@ -5,12 +5,34 @@ import Lanyard from './components/Lanyard.jsx';
 import SplashCursor from './components/SplashCursor.jsx';
 import LogoLoop from './components/LogoLoop.jsx';
 import TechText from './components/TechText.jsx';
-import { SiReact, SiTailwindcss, SiLaravel, SiFigma, SiPython, SiVercel, SiSupabase, SiMysql, SiPostgresql, SiJavascript, SiPhp, SiPostman, SiFlask, SiGithub, SiNodedotjs, SiGooglegemini, SiClaudecode, SiCloudflare, SiCloudflarepages,} from 'react-icons/si';
+import {
+  SiReact,
+  SiTailwindcss,
+  SiLaravel,
+  SiFigma,
+  SiPython,
+  SiVercel,
+  SiSupabase,
+  SiMysql,
+  SiPostgresql,
+  SiJavascript,
+  SiPhp,
+  SiPostman,
+  SiFlask,
+  SiGithub,
+  SiNodedotjs,
+  SiGooglegemini,
+  SiClaudecode,
+  SiCloudflare,
+  SiCloudflarepages,
+} from 'react-icons/si';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { Routes, Route, Link } from 'react-router-dom'; 
+import { Routes, Route, Link } from 'react-router-dom';
 import DetailProyek from './components/pages/DetailProyek.jsx';
 import NotFound from './components/pages/NotFound.jsx';
 import UiverseButton from './components/UiverseButton.jsx';
+import Card from './components/Card';
+import AlertToast from './components/AlertToast';
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev", hoverColor: "#61dafb" },
@@ -24,7 +46,7 @@ const techLogos = [
   { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org", hoverColor: "#336791" },
   { node: <SiJavascript />, title: "JavaScript", href: "https://www.javascript.com", hoverColor: "#f7df1e" },
   { node: <SiPhp />, title: "PHP", href: "https://www.php.net", hoverColor: "#777bb4" },
-  { node: <SiPostman />, title: "Postman", href: "https://www.postman.com", hoverColor: "#ff6c37" },  
+  { node: <SiPostman />, title: "Postman", href: "https://www.postman.com", hoverColor: "#ff6c37" },
   { node: <SiFlask />, title: "Flask", href: "https://flask.palletsprojects.com", hoverColor: "#000000" },
   { node: <SiGithub />, title: "GitHub", href: "https://github.com", hoverColor: "#181717" },
   { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org", hoverColor: "#339933" },
@@ -34,9 +56,41 @@ const techLogos = [
   { node: <SiCloudflarepages />, title: "Cloudflare Pages", href: "https://pages.cloudflare.com", hoverColor: "#f59e0b" },
 ];
 
+const SectionDivider = () => (
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-0.75 bg-zinc-800" />
+);
+
 function Home() {
-  const roles = ["Web Developer", "Frontend Developer", "Backend Developer",];
+  const roles = ["Web Developer", "Frontend Developer", "Backend Developer"];
   const [roleIndex, setRoleIndex] = useState(0);
+  const [statusKirim, setStatusKirim] = useState("idle"); // "idle" | "loading" | "success" | "error"
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatusKirim("loading");
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/jkotriady@gmail.com", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatusKirim("success");
+        e.target.reset();
+        setTimeout(() => setStatusKirim("idle"), 5000);
+      } else {
+        setStatusKirim("error");
+      }
+    } catch (error) {
+      setStatusKirim("error");
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,12 +102,11 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section 
-        id="home" 
+      <section
+        id="home"
         className="relative flex w-full flex-col justify-between overflow-hidden"
         style={{ height: "calc(100svh - 80px)", minHeight: "540px" }}
       >
-        
         {/* LAYER 1 (Belakang): Teks Solid */}
         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center select-none pb-8">
           <div className="w-full text-center animate__animated animate__fadeIn">
@@ -63,7 +116,7 @@ function Home() {
                 fontSize: "clamp(4.2rem, 19vw, 19.5rem)",
                 lineHeight: 0.86,
                 letterSpacing: "-0.01em",
-                color: "greenyellow"
+                color: "greenyellow",
               }}
               className="inline-block whitespace-nowrap uppercase"
             >
@@ -86,7 +139,7 @@ function Home() {
           />
         </div>
 
-        {/* LAYER 3 (Depan): Subjudul + Teks Outline (Hanya bagian tengah RTFOL yang bergaris) */}
+        {/* LAYER 3 (Depan): Subjudul + Teks Outline */}
         <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center select-none pb-8">
           <div className="w-full text-center animate__animated animate__fadeIn">
             <span
@@ -107,19 +160,19 @@ function Home() {
                 }}
                 className="pointer-events-none absolute bottom-full left-0 mb-2 flex items-center gap-1.5 text-left font-normal tracking-normal normal-case whitespace-nowrap sm:mb-3"
               >
-                <span className="">Focusing on</span>
+                <span>Focusing on</span>
                 <span className="font-semibold text-lime-400">
                   {roles[roleIndex]}
                 </span>
               </div>
 
-              {/* Huruf pinggir transparan total, bagian tengah (RTFOL) ber-outline */}
+              {/* Huruf pinggir transparan total, bagian tengah ber-outline */}
               <span style={{ color: "transparent", WebkitTextFillColor: "transparent" }}>DE</span>
               <span
                 style={{
                   color: "transparent",
                   WebkitTextFillColor: "transparent",
-                  WebkitTextStroke: "clamp(1.5px, 0.16vw, 2.2px) #EADCC0 ",
+                  WebkitTextStroke: "clamp(1.5px, 0.16vw, 2.2px) #EADCC0",
                 }}
               >
                 VELOP
@@ -130,28 +183,36 @@ function Home() {
         </div>
 
         {/* BOTTOM BAR: Nama (Kiri) & Download CV + Explore Projects (Kanan) */}
-        <div 
+        <div
           className="z-40 mt-auto flex w-full items-end justify-between"
           style={{ padding: "clamp(16px, 2vw, 26px) clamp(18px, 3.5vw, 52px)" }}
         >
           <div className="flex items-center gap-4">
-            <p 
+            <p
               style={{ fontSize: "clamp(10px, 1.1vw, 13px)", letterSpacing: "0.12em" }}
               className="font-medium uppercase whitespace-nowrap"
             >
               RAE TRIADI
             </p>
             <div className="hidden sm:flex items-center gap-3 text-sm">
-              <a href="https://github.com/rae4321" target="_blank" rel="noreferrer" className="hover:opacity-100 hover:text-lime-400 transition">
+              <a
+                href="https://github.com/rae4321"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:opacity-100 hover:text-lime-400 transition"
+              >
                 <SiGithub />
               </a>
-              <a href="mailto:jkotriady@gmail.com" className="hover:opacity-100 hover:text-lime-400 transition">
+              <a
+                href="mailto:jkotriady@gmail.com"
+                className="hover:opacity-100 hover:text-lime-400 transition"
+              >
                 <i className="ri-mail-line"></i>
               </a>
             </div>
           </div>
 
-          <div 
+          <div
             style={{ fontSize: "clamp(10px, 1.1vw, 13px)", letterSpacing: "0.12em" }}
             className="flex items-center gap-6 font-medium uppercase"
           >
@@ -168,86 +229,120 @@ function Home() {
               className="group inline-flex items-center gap-1.5 transition hover:opacity-100 hover:text-lime-400"
             >
               <span>LIHAT PROYEK</span>
-              <span className="inline-block transition-transform duration-300 group-hover:translate-y-0.5"><i className="ri-arrow-down-line"></i></span>
+              <span className="inline-block transition-transform duration-300 group-hover:translate-y-0.5">
+                <i className="ri-arrow-down-line"></i>
+              </span>
             </a>
           </div>
         </div>
 
-        {/* Garis tipis pembatas bawah */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-px bg-current opacity-10" />
-
+        <SectionDivider />
       </section>
-      
-      {/* Tentang */}
-      <div className='tentang mt-10 py-10' id='tentang'>
-        <div className='xl:w-2/3 lg:w-full mx-auto p-7 adaptive-card border border-zinc-600 rounded-lg' data-aos="fade-up" data-aos-duration="1000">
-          <h1 className='text-4xl/snug mb-4'>Tentang Saya</h1>
-          <p className='text-base/loose mb-10'>
-            Hi, perkenalkan saya Rae Triadi, Lulusan Teknik Informatika yang memiliki pengalaman berharga dalam menyeimbangkan dunia kerja dan akademik. Memiliki minat yang tinggi serta pemahaman mendalam di bidang Teknologi Informasi, khususnya dalam Pengembangan Website, Desain Antarmuka, dan Pengujian Aplikasi. Berorientasi pada detail, adaptif, dan siap berkontribusi secara profesional serta bersaing di industri teknologi yang dinamis.
-          </p>
-          <div className='flex items-center justify-between'>
-            <div className='flex items-center gap-6'>
-              <div>
-                <h1 className='text-4xl mb-1'>4<span className='text-amber-400'>+</span></h1>
-                <p>Proyek Selesai</p>
-              </div>
-              <div>
-                <h1 className='text-4xl mb-1'>2<span className='text-amber-400'>+</span></h1>
-                <p>Tahun Pengalaman</p>
+
+      {/* Tentang & Tools */}
+      <div className="relative tentang mt-10 py-20" id="tentang">
+        <Card
+          title="ABOUT_ME.TXT"
+          variant="white"
+          className="xl:w-2/3 lg:w-full mx-auto"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div className="p-2 sm:p-4">
+            <p className="text-base/loose mb-8 opacity-90">
+              Hi, perkenalkan saya Rae Triadi, Lulusan Teknik Informatika yang memiliki pengalaman berharga dalam menyeimbangkan dunia kerja dan akademik. Memiliki minat yang tinggi serta pemahaman mendalam di bidang Teknologi Informasi, khususnya dalam Pengembangan Website, Desain Antarmuka, dan Pengujian Aplikasi. Berorientasi pada detail, adaptif, dan siap berkontribusi secara profesional serta bersaing di industri teknologi yang dinamis.
+            </p>
+
+            <div className="flex items-center justify-between pt-6 border-t-[3px] border-black dark:border-zinc-700">
+              <div className="flex items-center gap-8 sm:gap-12">
+                <div>
+                  <h1 className="text-3xl sm:text-4xl font-black mb-1">
+                    4<span className="text-amber-400">+</span>
+                  </h1>
+                  <p className="text-sm sm:text-base font-semibold opacity-80">Proyek Selesai</p>
+                </div>
+                <div>
+                  <h1 className="text-3xl sm:text-4xl font-black mb-1">
+                    2<span className="text-amber-400">+</span>
+                  </h1>
+                  <p className="text-sm sm:text-base font-semibold opacity-80">Tahun Pengalaman</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </Card>
 
-        {/* tools Section */}
-        <div className='tools mt-32'>
-          <h1 className='text-center text-4xl/snug mb-4' data-aos="fade-up" data-aos-duration="1000">Tools yang dipakai</h1>
-          <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+        {/* Tools Section */}
+        <div className="tools mt-32">
+          <h1 className="text-center text-4xl/snug mb-4" data-aos="fade-up" data-aos-duration="1000">
+            Tools yang dipakai
+          </h1>
+          <p
+            className="text-base text-center opacity-50"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
             Berikut adalah beberapa tools yang saya gunakan dalam pengembangan aplikasi web.
           </p>
         </div>
-      </div>
 
-      <div style={{ position: 'relative', overflow: 'hidden' }} className="py-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-        <LogoLoop
-          logos={techLogos}
-          speed={50}
-          direction="left"
-        />
+        <div
+          style={{ position: 'relative', overflow: 'hidden' }}
+          className="py-10"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+        >
+          <LogoLoop logos={techLogos} speed={50} direction="left" />
+        </div>
+
+        <SectionDivider />
       </div>
 
       {/* Proyek */}
-      <div className="proyek mt-32 py-10" id='proyek'>
-        <h1 className='text-center text-4xl/snug mb-4' data-aos="fade-up" data-aos-duration="1000">Proyek</h1>
-        <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+      <div className="relative proyek mt-10 py-20" id="proyek">
+        <h1 className="text-center text-4xl/snug mb-4" data-aos="fade-up" data-aos-duration="1000">
+          Proyek
+        </h1>
+        <p
+          className="text-base text-center opacity-50"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+        >
           Berikut adalah beberapa proyek yang telah saya kerjakan.
         </p>
 
-        <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000">
-          {listProyek.map(proyek => (
-            <div 
-              key={proyek.id} 
-              className='p-4 adaptive-card border border-zinc-500 rounded-md flex flex-col' 
-              data-aos="fade-up" 
-              data-aos-duration="1000" 
+        <div
+          className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          {listProyek.map((proyek) => (
+            <div
+              key={proyek.id}
+              className="p-4 adaptive-card border border-zinc-500 rounded-md flex flex-col"
+              data-aos="fade-up"
+              data-aos-duration="1000"
               data-aos-delay={proyek.dad}
             >
-              <img 
-                src={proyek.gambar} 
-                alt={proyek.nama} 
-                loading='lazy' 
-                className='w-full h-48 object-cover rounded-md' 
+              <img
+                src={proyek.gambar}
+                alt={proyek.nama}
+                loading="lazy"
+                className="w-full h-48 object-cover rounded-md"
               />
 
-              <div className='flex flex-col flex-1'>
-                <h1 className='text-2xl text-center my-4 line-clamp-2 min-h-16 flex items-center justify-center'>
+              <div className="flex flex-col flex-1">
+                <h1 className="text-2xl text-center my-4 line-clamp-2 min-h-16 flex items-center justify-center">
                   {proyek.nama}
                 </h1>
 
-                <div className='mt-auto pt-4 px-1 pb-1 text-center flex gap-2'>
-                  <UiverseButton 
-                    to={`/proyek/${proyek.id}`} 
-                    variant="yellow" 
+                <div className="mt-auto pt-4 px-1 pb-1 text-center flex gap-2">
+                  <UiverseButton
+                    to={`/proyek/${proyek.id}`}
+                    variant="yellow"
                     className="w-full"
                   >
                     Detail Proyek
@@ -257,40 +352,53 @@ function Home() {
             </div>
           ))}
         </div>
+
+        <SectionDivider />
       </div>
 
       {/* Sertifikat */}
-      <div className="proyek mt-32 py-10" id='sertifikat'>
-        <h1 className='text-center text-4xl/snug mb-4' data-aos="fade-up" data-aos-duration="1000">Sertifikat</h1>
-        <p className='text-base text-center opacity-50' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+      <div className="relative proyek mt-10 py-20" id="sertifikat">
+        <h1 className="text-center text-4xl/snug mb-4" data-aos="fade-up" data-aos-duration="1000">
+          Sertifikat
+        </h1>
+        <p
+          className="text-base text-center opacity-50"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+        >
           Berikut adalah beberapa sertifikat yang telah saya peroleh.
         </p>
 
-        <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000">
-          {listSertifikat.map(sertifikat => (
-            <div 
-              key={sertifikat.id} 
-              className='p-4 adaptive-card border border-zinc-500 rounded-md flex flex-col' 
-              data-aos="fade-up" 
-              data-aos-duration="1000" 
+        <div
+          className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          {listSertifikat.map((sertifikat) => (
+            <div
+              key={sertifikat.id}
+              className="p-4 adaptive-card border border-zinc-500 rounded-md flex flex-col"
+              data-aos="fade-up"
+              data-aos-duration="1000"
               data-aos-delay={sertifikat.dad}
             >
-              <img 
-                src={sertifikat.gambar} 
-                alt={sertifikat.nama} 
-                loading='lazy' 
-                className='w-full h-48 object-cover rounded-md' 
+              <img
+                src={sertifikat.gambar}
+                alt={sertifikat.nama}
+                loading="lazy"
+                className="w-full h-48 object-cover rounded-md"
               />
 
-              <div className='flex flex-col flex-1'>
-                <h1 className='text-2xl text-center my-4 line-clamp-2 min-h-16 flex items-center justify-center'>
+              <div className="flex flex-col flex-1">
+                <h1 className="text-2xl text-center my-4 line-clamp-2 min-h-16 flex items-center justify-center">
                   {sertifikat.nama}
                 </h1>
-                <div className='mt-auto pt-4 px-1 pb-1 text-center flex gap-2'>
-                  <UiverseButton 
+                <div className="mt-auto pt-4 px-1 pb-1 text-center flex gap-2">
+                  <UiverseButton
                     href={sertifikat.link && sertifikat.link.trim() !== "" ? sertifikat.link : undefined}
                     to={!sertifikat.link || sertifikat.link.trim() === "" ? "/404" : undefined}
-                    variant="yellow" 
+                    variant="yellow"
                     className="w-full"
                   >
                     Lihat Detail
@@ -300,60 +408,136 @@ function Home() {
             </div>
           ))}
         </div>
+
+        <SectionDivider />
       </div>
 
       {/* Contact */}
-      <div className="contact mt-32 sm:p-10 p-0" id='kontak'>
-        <h1 className="text-4xl mb-2 text-center" data-aos="fade-up" data-aos-duration="1000">Kontak</h1>
-        <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+      <div className="relative contact mt-10 py-20 sm:px-10 px-0" id="kontak">
+        <h1 className="text-4xl mb-2 text-center" data-aos="fade-up" data-aos-duration="1000">
+          Kontak
+        </h1>
+        <p
+          className="text-base/loose text-center mb-10 opacity-50"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+        >
           Jika Anda tertarik untuk bekerja sama atau memiliki pertanyaan, jangan ragu untuk menghubungi saya.
         </p>
 
-        <form action="https://formsubmit.co/jkotriady@gmail.com" method='POST' className="adaptive-card p-10 sm:w-fit w-full mx-auto border border-zinc-500 rounded-md" autoComplete="off" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <label className="font-semibold">Nama Lengkap</label>
-              <input type="text" name="nama" placeholder="Masukkan Nama..." className="border border-zinc-500 p-2 rounded-md" required />
-            </div>
+        <Card
+          title="SEND_MESSAGE.EXE"
+          variant="dark"
+          titleVariant="lime"
+          className="sm:max-w-lg w-full mx-auto"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+        >
+          <form onSubmit={handleSubmit} className="p-2 sm:p-4" autoComplete="off">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="Pesan Baru dari Portofolio!" />
 
-            <div className="flex flex-col gap-2">
-              <label className="font-semibold">Email</label>
-              <input type="email" name="email" placeholder="Masukkan Email..." className="border border-zinc-500 p-2 rounded-md" required />
-            </div>
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-sm uppercase tracking-wide">Nama Lengkap</label>
+                <input
+                  type="text"
+                  name="nama"
+                  placeholder="Masukkan Nama..."
+                  className="border-2 border-black dark:border-zinc-500 bg-transparent p-2.5 focus:outline-none focus:shadow-[4px_4px_0_#000] transition-all"
+                  required
+                />
+              </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="pesan" className="font-semibold">Pesan</label>
-              <textarea name="pesan" id="pesan" cols="45" rows="7" placeholder="Pesan..." className="border border-zinc-500 p-2 rounded-md" required></textarea>
-            </div>
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-sm uppercase tracking-wide">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Masukkan Email..."
+                  className="border-2 border-black dark:border-zinc-500 bg-transparent p-2.5 focus:outline-none focus:shadow-[4px_4px_0_#000] transition-all"
+                  required
+                />
+              </div>
 
-            <div className="text-center px-1 pb-1">
-              <UiverseButton type="submit" variant="yellow" className="w-full">
-                Kirim Pesan
-              </UiverseButton>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="pesan" className="font-bold text-sm uppercase tracking-wide">Pesan</label>
+                <textarea
+                  name="pesan"
+                  id="pesan"
+                  rows="6"
+                  placeholder="Pesan..."
+                  className="border-2 border-black dark:border-zinc-500 bg-transparent p-2.5 focus:outline-none focus:shadow-[4px_4px_0_#000] transition-all"
+                  required
+                ></textarea>
+              </div>
+
+              <div className="text-center pt-2">
+                <button
+                  type="submit"
+                  disabled={statusKirim === "loading"}
+                  className="w-full py-2.5 px-4 font-['Montserrat',sans-serif] font-black uppercase tracking-wider text-black bg-[#4ade80] border-[3px] border-black shadow-[4px_4px_0_#000] cursor-pointer transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_#000] hover:bg-[#a3e635] active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {statusKirim === "loading" ? "Mengirim..." : "Kirim Pesan"}
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </Card>
+
+        <SectionDivider />
       </div>
+
+      {/* Floating Alert Toast di Pojok Kanan Bawah */}
+      {(statusKirim === "success" || statusKirim === "error") && (
+        <div className="fixed bottom-6 right-6 z-50 animate__animated animate__fadeInUp">
+          <AlertToast
+            type={statusKirim}
+            title={statusKirim === "success" ? "Pesan Terkirim!" : "Gagal Mengirim!"}
+            subtitle={
+              statusKirim === "success"
+                ? "Terima kasih, pesan kamu sudah masuk."
+                : "Terjadi kesalahan, silakan coba lagi."
+            }
+            onClose={() => setStatusKirim("idle")}
+          />
+        </div>
+      )}
     </>
   );
 }
 
 // ROUTING UTAMA
 function App() {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
-      <SplashCursor
-        DENSITY_DISSIPATION={3.5}
-        VELOCITY_DISSIPATION={2}
-        PRESSURE={0.1}
-        CURL={3}
-        SPLAT_RADIUS={0.2}
-        SPLAT_FORCE={6000}
-        COLOR_UPDATE_SPEED={10}
-        SHADING
-        RAINBOW_MODE={false}
-        COLOR="#6bbcff"
-      />
+      {isDesktop && (
+        <SplashCursor
+          DENSITY_DISSIPATION={3.5}
+          VELOCITY_DISSIPATION={2}
+          PRESSURE={0.1}
+          CURL={3}
+          SPLAT_RADIUS={0.2}
+          SPLAT_FORCE={6000}
+          COLOR_UPDATE_SPEED={10}
+          SHADING
+          RAINBOW_MODE={false}
+          COLOR="#6bbcff"
+        />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/proyek/:id" element={<DetailProyek />} />
